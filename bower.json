@@ -1,0 +1,20 @@
+{
+  "name": "Next Gen CSS",
+  "version": "0.0.0",
+  "description": "This is a next generation CSS framework",
+  "main": "index.html",
+  "keywords": [
+    "CSS",
+    "FlexBox",
+    "Attributes"
+  ],
+  "authors": [
+    "Jason Jacobson"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules"
+  ]
+}

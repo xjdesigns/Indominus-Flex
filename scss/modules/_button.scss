@@ -1,0 +1,49 @@
+// this is the global buttons for the framework for ppl
+// to use if they feel the need to have already styled
+// buttons put in to the design
+// TODO: look into the difference between <a> and <button> for using
+// we will focus right now on <a> tags
+// ██████╗ ██╗   ██╗████████╗████████╗ ██████╗ ███╗   ██╗
+// ██╔══██╗██║   ██║╚══██╔══╝╚══██╔══╝██╔═══██╗████╗  ██║
+// ██████╔╝██║   ██║   ██║      ██║   ██║   ██║██╔██╗ ██║
+// ██╔══██╗██║   ██║   ██║      ██║   ██║   ██║██║╚██╗██║
+// ██████╔╝╚██████╔╝   ██║      ██║   ╚██████╔╝██║ ╚████║
+// ╚═════╝  ╚═════╝    ╚═╝      ╚═╝    ╚═════╝ ╚═╝  ╚═══╝
+.btn {
+	display: inline-block;
+	margin: .2em;
+	padding: .5em 2em;
+	text-align: center;
+	cursor: pointer;
+	@include border-radius(24px);
+	@include transition();
+}
+
+.btn:link,
+.btn:visited {
+	color: $white;
+	text-decoration: none;
+}
+
+.btn-block {
+	display: block;
+}
+
+.btn {
+	&.btn-primary {
+		background-color: $primary;
+		border: 1px solid $primary;
+		&:hover {
+			color: $primary;
+			background-color: transparent;
+		}
+	}
+	&.btn-secondary {
+		background-color: $secondary;
+		border: 1px solid $secondary;
+		&:hover {
+			color: $secondary;
+			background-color: transparent;
+		}
+	}
+}

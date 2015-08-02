@@ -1,0 +1,21 @@
+// variables go below here
+//breakpoints based off 16px base size
+$break-xl: 80em; // 1280
+$break-lg: 64em; // 1024
+$break-md: 48em; // 768
+$break-sm: 20em; // 320
+
+//set a brand main
+$primary: rgba(30,112,195,1.0); // main blue
+$secondary: rgba(135,30,195,1.0); // main purple
+$btn: #fff; // TODO: set a base color
+$dark: rgba(50,50,50,1.0); // dark gray
+$light: rgba(200,200,200,1.0); // light gray
+
+// below add some custom colors
+
+// links go here
+// TODO: clean this up
+$link: rgba(30,112,195,1.0);
+$white: rgba(255,255,255,1.0);
+$shadows-06: rgba(0,0,0,0.6);

@@ -1,0 +1,172 @@
+// this is a flex grid using attribute selectors
+// inspired by Google's Polymer approach to layout
+// note: this uses auto-prefixer to make our lives easier
+[main] {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+// ██╗      █████╗ ██╗   ██╗ ██████╗ ██╗   ██╗████████╗
+// ██║     ██╔══██╗╚██╗ ██╔╝██╔═══██╗██║   ██║╚══██╔══╝
+// ██║     ███████║ ╚████╔╝ ██║   ██║██║   ██║   ██║
+// ██║     ██╔══██║  ╚██╔╝  ██║   ██║██║   ██║   ██║
+// ███████╗██║  ██║   ██║   ╚██████╔╝╚██████╔╝   ██║
+// ╚══════╝╚═╝  ╚═╝   ╚═╝    ╚═════╝  ╚═════╝    ╚═╝
+[flex] {
+    display: flex;
+
+    &[flex-inline] {
+        display: inline-flex;
+    }
+    &[flex-wrap] {
+        flex-wrap: wrap;
+    }
+    &[flex-nowrap] {
+        flex-wrap: nowrap;
+    }
+    &[horizontal] {
+        flex-direction: row;
+    }
+    &[reversed-horizontal] {
+        flex-direction: column-reverse;
+    }
+    &[vertical] {
+        flex-direction: column;
+    }
+    &[reversed-vertical] {
+        flex-direction: row-reverse;
+    }
+
+//  █████╗ ██╗     ██╗ ██████╗ ███╗   ██╗███╗   ███╗███████╗███╗   ██╗████████╗
+// ██╔══██╗██║     ██║██╔════╝ ████╗  ██║████╗ ████║██╔════╝████╗  ██║╚══██╔══╝
+// ███████║██║     ██║██║  ███╗██╔██╗ ██║██╔████╔██║█████╗  ██╔██╗ ██║   ██║
+// ██╔══██║██║     ██║██║   ██║██║╚██╗██║██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║
+// ██║  ██║███████╗██║╚██████╔╝██║ ╚████║██║ ╚═╝ ██║███████╗██║ ╚████║   ██║
+// ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝
+    // alignment to align with the stars
+    // this is a child of [flex]
+    &[justify-start] {
+        justify-content: flex-start;
+    }
+    &[justify-end] {
+        justify-content: flex-end;
+    }
+    &[justify-center] {
+        justify-content: center;
+    }
+    &[space-around] {
+        justify-content: space-around;
+    }
+    &[space-between] {
+        justify-content: space-around;
+    }
+
+// ███████╗███████╗██╗     ███████╗     █████╗ ██╗     ██╗ ██████╗ ███╗   ██╗
+// ██╔════╝██╔════╝██║     ██╔════╝    ██╔══██╗██║     ██║██╔════╝ ████╗  ██║
+// ███████╗█████╗  ██║     █████╗█████╗███████║██║     ██║██║  ███╗██╔██╗ ██║
+// ╚════██║██╔══╝  ██║     ██╔══╝╚════╝██╔══██║██║     ██║██║   ██║██║╚██╗██║
+// ███████║███████╗███████╗██║         ██║  ██║███████╗██║╚██████╔╝██║ ╚████║
+// ╚══════╝╚══════╝╚══════╝╚═╝         ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝
+    // self alignment for aligning your inner children
+    // this is a child of [flex]
+    &[self-start] {
+        align-self: flex-start;
+    }
+    &[self-end] {
+        align-self: flex-end;
+    }
+
+}
+// end of [flex] for display
+
+// ███████╗██╗     ███████╗██╗  ██╗
+// ██╔════╝██║     ██╔════╝╚██╗██╔╝
+// █████╗  ██║     █████╗   ╚███╔╝
+// ██╔══╝  ██║     ██╔══╝   ██╔██╗
+// ██║     ███████╗███████╗██╔╝ ██╗
+// ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝
+// flex grow/shrink attributes for becoming a boss
+[flex-auto] {
+    flex: 1 1 auto;
+}
+[flex-grow] {
+    flex-grow: 1;
+}
+[flex-no-grow] {
+    flex-grow: 0;
+}
+[flex-shrink] {
+    flex-shrink: 1;
+}
+[flex-no-shrink] {
+    flex-shrink: 0;
+}
+[flex-none] {
+    flex: none;
+}
+// mixin for flex attribute grow/shrink
+// example: [flex-1]
+@mixin flex_me($flex-col) {
+    @for $i from 1 through $flex-col {
+        [flex-#{$i}] {
+            flex: $i;
+        }
+    }
+}
+@include flex_me(12);
+
+// lets set grid sizing then mix it in to media queries
+// example: [flex-sm-1]
+// default is 12 columns, you may declare a new value as a parameter to override
+@mixin grid_columns($bp, $columns:12, $gutter: 1em) {
+   @for $i from 1 through $columns {
+        [flex-#{$bp}-#{$i}] {
+            flex-basis: ((100% / $columns)*$i);
+            padding-left: $gutter;
+            padding-right: $gutter;
+        }
+    }
+    @for $i from 1 through $columns {
+        .flex-offset--#{$i} {
+            margin-left: ((100% / $columns)*$i);
+        }
+   }
+}
+@include bp(sm) {
+    @include grid_columns(sm);
+}
+@include bp(md) {
+    @include grid_columns(md);
+}
+@include bp(lg) {
+    @include grid_columns(lg);
+}
+
+
+
+//  ██████╗ ████████╗██╗  ██╗███████╗██████╗
+// ██╔═══██╗╚══██╔══╝██║  ██║██╔════╝██╔══██╗
+// ██║   ██║   ██║   ███████║█████╗  ██████╔╝
+// ██║   ██║   ██║   ██╔══██║██╔══╝  ██╔══██╗
+// ╚██████╔╝   ██║   ██║  ██║███████╗██║  ██║
+//  ╚═════╝    ╚═╝   ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
+// other properties for helping you achieve your goals
+[block] {
+    display: block;
+}
+[inline-block] {
+    display: inline-block;
+}
+[inline] {
+    display: inline;
+}
+[fit] {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+[fixed] {
+    position: fixed;
+}

@@ -1,0 +1,33 @@
+// created by Jason Jacobson
+// THE NEW GENERATION OF CSS FRAMEWORKS
+// USING THE BEST OF CSS TO CREATE A POWERFUL
+// FRAMEWORK THAT CAN EXTEND AND SCALE WITH EASE
+// CODE NAMED: Indominus Flex 0.0
+
+// import stylesheets
+// to keep your output footprint as light as possible
+// I have kept everything modular, some frameworks use a truthy method
+// but I feel it is confusing so lets just play the comment out game
+
+@import "modules/base"; // Base styling goes here
+@import "modules/clearfix"; // thinking this needs to be just a global deal
+@import "modules/var"; // all global variables should live here
+@import "modules/mixins"; // mixins for writing dry code
+@import "modules/layout/layout-rev"; // Flex grid
+@import "modules/media-block"; // Nicole Sullivans Media Object
+@import "modules/inputs"; // Input styling
+@import "modules/form-checkbox";
+@import "modules/button"; // Buttons
+@import "modules/progress-bar"; // Progress Bar styling
+@import "modules/components.data-tips"; // Tooltips
+
+// these are possible additions I can make but well see
+// @import "modules/ranges/range.global.scss";
+// // LOADING SEEMS TO BE CAUSING ISSUES
+// @import "modules/loading/loading";
+
+// all other styling is in the SHAME FILE!!
+// Read a great article on creating one to help write better code
+// this is where all the junk lives that needs to be converted
+// to Atomic OOBEMITSCSS
+@import "shame";

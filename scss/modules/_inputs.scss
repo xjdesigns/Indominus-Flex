@@ -1,0 +1,44 @@
+// ██╗███╗   ██╗██████╗ ██╗   ██╗████████╗
+// ██║████╗  ██║██╔══██╗██║   ██║╚══██╔══╝
+// ██║██╔██╗ ██║██████╔╝██║   ██║   ██║
+// ██║██║╚██╗██║██╔═══╝ ██║   ██║   ██║
+// ██║██║ ╚████║██║     ╚██████╔╝   ██║
+// ╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝    ╚═╝
+.input-add {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.input-add__field {
+	flex: 1;
+	border: 1px solid $dark;
+  border-radius: 0;
+  padding: 0 5px;
+  -webkit-appearance: none;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.input-add__item {
+	border: 1px solid $dark;
+	background-color: $dark;
+	color: $white;
+  padding: .5em 1em;
+
+  	i {
+  		font-size: 1rem;
+  	}
+
+	// add modifier attr for first and last
+	&--first {
+		border-right: none;
+		border-radius: 10px 0px 0px 10px;
+	}
+	&--last {
+		border-left: none;
+		border-radius: 0px 10px 10px 0px;
+	}
+}

@@ -31,4 +31,23 @@ $(document).ready(function() {
     $(this).append(codeSnippet);
   });
 
+  $('.icon-circle').click(function() {
+    $(this).toggleClass('active');
+  });
+
+  var range = $('.input--range__slider'), value = $('.inputVal'), maxValue = $('.maxVal');
+
+  value.html(range.attr('value'));
+  var maxM = $('.input--range__slider').attr('max');
+
+  if(maxM === undefined) {
+    maxValue.css('display','none');
+  } else {
+    maxValue.html("\/" + maxM);
+  }
+
+  range.on('input', function(){
+    value.html(this.value);
+  });
+
 });

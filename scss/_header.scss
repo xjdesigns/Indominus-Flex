@@ -1,0 +1,49 @@
+// ██╗  ██╗███████╗ █████╗ ██████╗ ███████╗██████╗
+// ██║  ██║██╔════╝██╔══██╗██╔══██╗██╔════╝██╔══██╗
+// ███████║█████╗  ███████║██║  ██║█████╗  ██████╔╝
+// ██╔══██║██╔══╝  ██╔══██║██║  ██║██╔══╝  ██╔══██╗
+// ██║  ██║███████╗██║  ██║██████╔╝███████╗██║  ██║
+// ╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝╚═════╝ ╚══════╝╚═╝  ╚═╝
+
+.main-header {
+  width: 100%;
+  display: flex;
+  flex-flow: nowrap row;
+  align-items: center;
+  background-color: lighten($light, 20);
+  border-bottom: 1px solid $dark;
+  padding: 1em;
+
+  &__logo {
+    flex: 1 0 0;
+    font-size: 1.125rem;
+    text-transform: uppercase;
+  }
+
+  &__nav {
+    display: flex;
+
+    .icon-circle {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 30px;
+      height: 30px;
+      margin: 0 .2em;
+      border-radius: 50%;
+      border: 1px solid $dark;
+      transition: border .3s;
+
+      .material-icons {
+        font-size: 14px;
+      }
+
+      &:hover {
+        border-color: $light;
+      }
+      &.active {
+        border-color: $brand-primary;
+      }
+    }
+  }
+}

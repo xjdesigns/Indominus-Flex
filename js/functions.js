@@ -31,23 +31,56 @@ $(document).ready(function() {
     $(this).append(codeSnippet);
   });
 
-  $('.icon-circle').click(function() {
-    $(this).toggleClass('active');
-  });
 
-  var range = $('.input--range__slider'), value = $('.inputVal'), maxValue = $('.maxVal');
+  var iconCircle = document.querySelectorAll('.icon-circle');
 
-  value.html(range.attr('value'));
-  var maxM = $('.input--range__slider').attr('max');
+  var eventHandler = function() {
+    var toggle = event.target;
+    console.log(toggle);
 
-  if(maxM === undefined) {
-    maxValue.css('display','none');
+    if (toggle.classList.contains('icon-circle')) {
+      event.preventDefault();
+      hasActiveClass: {
+        if(toggle.classList.contains('active')) {
+          toggle.classList.remove('active');
+        } else {
+          toggle.classList.add('active');
+        }
+      }
+    }
+  };
+  document.addEventListener('click', eventHandler, false);
+
+
+  // getting vanilla with the work below on inputs
+  // then we can use these to be material
+
+  // update the range output while range is moving
+  var rangeInput = document.querySelector('.input--range__slider');
+  var valueOutput = document.querySelector('.inputVal');
+  var maxAttr = rangeInput.getAttribute('max');
+  var maxVal = document.querySelector('.maxVal');
+
+  // set the value
+  valueOutput.innerHTML = rangeInput.value;
+
+  if(maxAttr !== null) {
+    maxVal.innerHTML = '\/' + maxAttr;
   } else {
-    maxValue.html("\/" + maxM);
+    maxVal.style.display = 'none';
   }
 
-  range.on('input', function(){
-    value.html(this.value);
-  });
+  rangeInput.addEventListener('mousemove', function(event) {
+    valueOutput.innerHTML = rangeInput.value;
+  }, false);
+
+  // text input
+  // grab the input and spit the value into the output
+  var inputText = document.querySelector('#inText');
+  var outputText = document.querySelector('#outputText');
+
+  inputText.addEventListener('keyup', function(event) {
+    outputText.innerHTML = inputText.value;
+  }, false);
 
 });

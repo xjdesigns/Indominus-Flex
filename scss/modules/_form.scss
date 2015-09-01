@@ -27,7 +27,9 @@
 	background-color: $primary;
 	color: $white;
   padding: .5em 1em;
-  width: 60px;
+  width: 50px;
+  overflow: hidden;
+  position: relative;
   transition: width .3s;
 
   	i {
@@ -36,6 +38,10 @@
 
   &:hover {
     width: 100px;
+  }
+
+  .addon-title {
+    transform: translateX(100%);
   }
 
 	// add modifier attr for first and last
@@ -47,6 +53,58 @@
 		border-left: none;
 		border-radius: 0px 10px 10px 0px;
 	}
+  &--title {
+    &:after {
+      content: attr(data-title);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      font-size: .65rem;
+      transition: transform .3s, right .3s;
+      transform: translateX(100%) translateY(-50%);
+    }
+    &:hover {
+      &:after {
+        right: 24px;
+        transition: transform .3s, right .3s;
+        transform: translateX(0) translateY(-50%);
+      }
+    }
+  }
+}
+
+//////////
+// new input //
+//////////
+.input-text {
+  display: flex;
+  width: 100%;
+  position: relative;
+
+  &__txt {
+    flex: 1;
+    width: 100%;
+    padding: 6px 12px;
+    background-color: $light;
+  }
+
+  &__label {
+    // position: absolute;
+    // top: -8px;
+    // left: 12px;
+    flex: 1;
+    font-size: 10px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $primary;
+    }
+  }
 }
 
 
@@ -231,4 +289,38 @@ input[type=range]:focus::-ms-fill-upper {
     color: $primary;
     font-size: 30px;
   }
+}
+
+
+
+
+
+////////////
+// search //
+///////////
+.search__input {
+  -webkit-appearance: none;
+  width: 0%;
+  min-height: 24px;
+  background-color: $light;
+  border-radius: 24px;
+  color: $dark;
+  transition: width .3s;
+  &:focus {
+    width:30%;
+    outline: 0;
+    border: 1px solid $primary;
+    & ~ .search__icon i.fa {
+      color: $primary;
+    }
+  }
+  i.fa {
+    color: $dark;
+  }
+}
+
+
+// not sure if needed, keep it at the bottom
+input[type="search"]::-webkit-textfield-decoration-container {
+  -webkit-appearance: none;
 }

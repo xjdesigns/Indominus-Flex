@@ -1,12 +1,5 @@
 $(document).ready(function() {
 
-  // main nav menu click functions
-  $('.menu-btn').click(function() {
-    var activeState = 'active';
-    $(this).toggleClass(activeState);
-    $('.nav, .nav-menu').toggleClass(activeState);
-  });
-
   $('.nav-menu li#flexgrid').click(function() {
     $('.section-tflex').addClass('active');
     $('body').addClass('hidden');
@@ -32,24 +25,43 @@ $(document).ready(function() {
   });
 
 
+
+  var activeState = 'active';
+  var menuButton = document.querySelector('.menu-btn');
+  var navBar = document.querySelector('.nav');
+  var navMenu = document.querySelector('.nav-menu');
   var iconCircle = document.querySelectorAll('.icon-circle');
+  var bodyTag = document.querySelectorAll('body');
 
   var eventHandler = function() {
     var toggle = event.target;
-    console.log(toggle);
-
     if (toggle.classList.contains('icon-circle')) {
       event.preventDefault();
       hasActiveClass: {
-        if(toggle.classList.contains('active')) {
-          toggle.classList.remove('active');
+        if(toggle.classList.contains(activeState)) {
+          toggle.classList.remove(activeState);
         } else {
-          toggle.classList.add('active');
+          toggle.classList.add(activeState);
+        }
+      }
+    }
+    if (toggle.classList.contains('menu-btn')) {
+      event.preventDefault();
+      hasActiveClass: {
+        if(toggle.classList.contains(activeState)) {
+          toggle.classList.remove(activeState);
+          navBar.classList.remove(activeState);
+          navMenu.classList.remove(activeState);
+        } else {
+          toggle.classList.add(activeState);
+          navBar.classList.add(activeState);
+          navMenu.classList.add(activeState);
         }
       }
     }
   };
   document.addEventListener('click', eventHandler, false);
+
 
 
   // getting vanilla with the work below on inputs
@@ -80,7 +92,7 @@ $(document).ready(function() {
   var outputText = document.querySelector('#outputText');
 
   inputText.addEventListener('keyup', function(event) {
-    outputText.innerHTML = inputText.value;
+    outputText.innerHTML = inputText.value.length;
   }, false);
 
 });

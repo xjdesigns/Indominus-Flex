@@ -46,10 +46,10 @@
 		}
 	}
 	&.btn-secondary {
-		background-color: $secondary;
-		border: 1px solid $secondary;
+		background-color: $brand-secondary;
+		border: 1px solid $brand-secondary;
 		&:hover {
-			color: $secondary;
+			color: $brand-secondary;
 			background-color: transparent;
 		}
 	}

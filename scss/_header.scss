@@ -10,13 +10,14 @@
   display: flex;
   flex-flow: nowrap row;
   align-items: center;
-  background-color: lighten($light, 20);
+  background-color: $light;
   border-bottom: 1px solid $dark;
   padding: 1em;
 
   &__logo {
     flex: 1 0 0;
     font-size: 1.125rem;
+    color: $brand-primary;
     text-transform: uppercase;
   }
 
@@ -39,7 +40,7 @@
       }
 
       &:hover {
-        border-color: $light;
+        border-color: darken($primary, 10);
       }
       &.active {
         border-color: $brand-primary;

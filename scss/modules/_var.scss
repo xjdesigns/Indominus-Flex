@@ -1,3 +1,12 @@
+// BASE SIZING
+$font-size-root: 16px;
+$font-size-base: $font-size-root;
+$line-height-base: 1.1;
+$font-family-base: 'Lato', helvetica, sans-serif;
+
+$container: 1140px;
+$gutter-size: 24px;
+
 // variables go below here
 //breakpoints based off 16px base size
 $break-xl: 80em; // 1280

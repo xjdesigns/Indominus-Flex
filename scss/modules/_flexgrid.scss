@@ -17,7 +17,7 @@
 //   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝
 // variables for the build
 // NOTE: these can be moved into a global var partial
-$gutter: 24px; // gets divided in half
+$gutter: $gutter-size; // gets divided in half
 $base-columns: 12 10; // columns
 // media query breakpoints
 // TODO: what breakpoints do we want as a standard
@@ -35,7 +35,7 @@ $break-sm: 30em; // 480
 // ███████╗╚██████╗╚██████╔╝
 // ╚══════╝ ╚═════╝ ╚═════╝
 .container {
-  max-width: 1140px;
+  max-width: $container;
   margin-left: auto;
   margin-right: auto;
   // fluid ecosystem

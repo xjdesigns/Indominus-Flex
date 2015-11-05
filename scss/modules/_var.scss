@@ -9,13 +9,49 @@ $break-sm: 20em; // 320
 $primary: rgba(30,112,195,1.0); // main blue
 $secondary: rgba(135,30,195,1.0); // main purple
 $btn: #fff; // TODO: set a base color
-$dark: rgba(50,50,50,1.0); // dark gray
+$dark: rgba(10,10,10,1.0); // dark gray
 $light: rgba(200,200,200,1.0); // light gray
 
 // below add some custom colors
 
 // links go here
-// TODO: clean this up
+// TODO: remove this trash, I would put this in a shame file, I feel dirty
 $link: rgba(30,112,195,1.0);
 $white: rgba(255,255,255,1.0);
 $shadows-06: rgba(0,0,0,0.6);
+
+
+// main brand color
+// TODO: change these to rgba please
+$brand-primary: #1fa2ed;
+$brand-secondary: green;
+$brand-tertiary: yellow;
+
+
+// brand list for creating darken arrays
+// and lighten, could do this easy for alpha as well, i think
+// example: .brand-primary--light20
+@for $i from 1 through 4 {
+  .brand-primary--dark#{$i * 10} {
+    color: darken($brand-primary, $i * 10);
+  }
+  .brand-primary--light#{$i}0 {
+    color: lighten($brand-primary, $i * 10);
+  }
+  .brand-secondary--dark#{$i}0 {
+    color: darken($brand-secondary, $i * 10);
+  }
+  .brand-secondary--light#{$i}0 {
+    color: lighten($brand-secondary, $i * 10);
+  }
+}
+
+// greyscale array list
+// example: .greyscale-01
+$colors-list: #000 #1a1a1a #333 #4d4d4d #666 #808080 #999 #b3b3b3 #ccc #e5e5e5 #fff;
+@each $current-color in $colors-list {
+  $i: index($colors-list, $current-color);
+  .greyscale-0#{$i} {
+    color: $current-color;
+  }
+}

@@ -1,0 +1,326 @@
+// ██╗███╗   ██╗██████╗ ██╗   ██╗████████╗
+// ██║████╗  ██║██╔══██╗██║   ██║╚══██╔══╝
+// ██║██╔██╗ ██║██████╔╝██║   ██║   ██║
+// ██║██║╚██╗██║██╔═══╝ ██║   ██║   ██║
+// ██║██║ ╚████║██║     ╚██████╔╝   ██║
+// ╚═╝╚═╝  ╚═══╝╚═╝      ╚═════╝    ╚═╝
+.input-add {
+  display: flex;
+  justify-content: center;
+  margin: 10px 0;
+}
+
+.input-add__field {
+	flex: 1;
+	border: 1px solid $primary;
+  border-radius: 0;
+  padding: 0 5px;
+  -webkit-appearance: none;
+
+	&:focus {
+		outline: 0;
+	}
+}
+
+.input-add__item {
+	border: 1px solid $primary;
+	background-color: $primary;
+	color: $white;
+  padding: .5em 1em;
+  width: 50px;
+  overflow: hidden;
+  position: relative;
+  transition: width .3s;
+
+  	i {
+  		font-size: 1rem;
+  	}
+
+  &:hover {
+    width: 100px;
+  }
+
+  .addon-title {
+    transform: translateX(100%);
+  }
+
+	// add modifier attr for first and last
+	&--first {
+		border-right: none;
+		border-radius: 10px 0px 0px 10px;
+	}
+	&--last {
+		border-left: none;
+		border-radius: 0px 10px 10px 0px;
+	}
+  &--title {
+    &:after {
+      content: attr(data-title);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      font-size: .65rem;
+      transition: transform .3s, right .3s;
+      transform: translateX(100%) translateY(-50%);
+    }
+    &:hover {
+      &:after {
+        right: 24px;
+        transition: transform .3s, right .3s;
+        transform: translateX(0) translateY(-50%);
+      }
+    }
+  }
+}
+
+//////////
+// new input //
+//////////
+.input-text {
+  display: flex;
+  width: 100%;
+  position: relative;
+
+  &__txt {
+    flex: 1;
+    width: 100%;
+    padding: 6px 12px;
+    background-color: $light;
+  }
+
+  &__label {
+    // position: absolute;
+    // top: -8px;
+    // left: 12px;
+    flex: 1;
+    font-size: 10px;
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $primary;
+    }
+  }
+}
+
+
+
+// ████████╗ ██████╗  ██████╗  ██████╗ ██╗     ███████╗
+// ╚══██╔══╝██╔═══██╗██╔════╝ ██╔════╝ ██║     ██╔════╝
+//    ██║   ██║   ██║██║  ███╗██║  ███╗██║     █████╗
+//    ██║   ██║   ██║██║   ██║██║   ██║██║     ██╔══╝
+//    ██║   ╚██████╔╝╚██████╔╝╚██████╔╝███████╗███████╗
+//    ╚═╝    ╚═════╝  ╚═════╝  ╚═════╝ ╚══════╝╚══════╝
+
+// cannot remember the significance of the item class
+// lets try removing said class
+.tgl {
+	display: none;
+}
+.tgl + .tgl-btn {
+  outline: 0;
+  display: block;
+  width: 4em;
+  height: 2em;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+.tgl + .tgl-btn:after, .tgl + .tgl-btn:before {
+  position: relative;
+  display: block;
+  content: "";
+  width: 50%;
+  height: 100%;
+}
+.tgl + .tgl-btn:after {
+  left: 0;
+}
+.tgl + .tgl-btn:before {
+  display: none;
+}
+.tgl:checked + .tgl-btn:after {
+  left: 50%;
+}
+
+.tgl-light + .tgl-btn {
+  background: rgba(204,62,62,1.0);
+  border-radius: 2em;
+  padding: 2px;
+  transition: all .4s ease;
+}
+.tgl-light + .tgl-btn:after {
+  border-radius: 50%;
+  background: #fff;
+  transition: all .2s ease;
+}
+.tgl-light:checked + .tgl-btn {
+  background: #9FD6AE;
+}
+
+
+
+// ██████╗  █████╗ ███╗   ██╗ ██████╗ ███████╗
+// ██╔══██╗██╔══██╗████╗  ██║██╔════╝ ██╔════╝
+// ██████╔╝███████║██╔██╗ ██║██║  ███╗█████╗
+// ██╔══██╗██╔══██║██║╚██╗██║██║   ██║██╔══╝
+// ██║  ██║██║  ██║██║ ╚████║╚██████╔╝███████╗
+// ╚═╝  ╚═╝╚═╝  ╚═╝╚═╝  ╚═══╝ ╚═════╝ ╚══════╝
+
+// this is for globally setting the html5 range input
+// TODO: set this up with the vars
+input[type=range] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+
+	&:focus {
+		outline: 0;
+	}
+}
+// you are not able to use sass on pesudo attr elements
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: $light;
+  border-radius: 1.3px;
+}
+input[type=range]::-webkit-slider-thumb {
+  border: 3px solid $light;
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background: $primary;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -5px;
+  transition: all .3s;
+}
+input[type=range]:focus::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  margin-top: -9px;
+}
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+.input--material {
+  position: relative;
+  z-index: 0;
+}
+.input--range__value {
+  position: absolute;
+  right: 0;
+  bottom: 60%;
+  z-index: -1;
+  font-size: 12px;
+  line-height: 1;
+  color: $light;
+  transition: all .3s;
+  .inputVal {
+    transition: all .3s;
+  }
+}
+.input--range__slider:focus {
+  & ~ div .inputVal {
+    color: $primary;
+    font-size: 30px;
+  }
+}
+
+
+
+
+
+////////////
+// search //
+///////////
+.search__input {
+  -webkit-appearance: none;
+  width: 0%;
+  min-height: 24px;
+  background-color: $light;
+  border-radius: 24px;
+  color: $dark;
+  transition: width .3s;
+  &:focus {
+    width:30%;
+    outline: 0;
+    border: 1px solid $primary;
+    & ~ .search__icon i.fa {
+      color: $primary;
+    }
+  }
+  i.fa {
+    color: $dark;
+  }
+}
+
+
+// not sure if needed, keep it at the bottom
+input[type="search"]::-webkit-textfield-decoration-container {
+  -webkit-appearance: none;
+}

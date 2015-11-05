@@ -15,8 +15,7 @@
 @import "modules/mixins"; // mixins for writing dry code
 @import "modules/layout/layout-rev"; // Flex grid
 @import "modules/media-block"; // Nicole Sullivans Media Object
-@import "modules/inputs"; // Input styling
-@import "modules/form-checkbox";
+@import "modules/form"; // form elements
 @import "modules/button"; // Buttons
 @import "modules/progress-bar"; // Progress Bar styling
 @import "modules/components.data-tips"; // Tooltips
@@ -25,6 +24,10 @@
 // @import "modules/ranges/range.global.scss";
 // // LOADING SEEMS TO BE CAUSING ISSUES
 // @import "modules/loading/loading";
+
+// below would be the components/objects area for building
+// OOCSS elements
+@import "header";
 
 // all other styling is in the SHAME FILE!!
 // Read a great article on creating one to help write better code

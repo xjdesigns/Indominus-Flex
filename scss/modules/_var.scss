@@ -1,3 +1,9 @@
+ // ██████╗  █████╗ ███████╗███████╗
+ // ██╔══██╗██╔══██╗██╔════╝██╔════╝
+ // ██████╔╝███████║███████╗█████╗
+ // ██╔══██╗██╔══██║╚════██║██╔══╝
+ // ██████╔╝██║  ██║███████║███████╗
+ // ╚═════╝ ╚═╝  ╚═╝╚══════╝╚══════╝
 // BASE SIZING
 $font-size-root: 16px;
 $font-size-base: $font-size-root;
@@ -13,6 +19,17 @@ $break-xl: 80em; // 1280
 $break-lg: 64em; // 1024
 $break-md: 48em; // 768
 $break-sm: 20em; // 320
+
+
+
+// main brand color
+// TODO: change these to rgba please
+$brand-primary: #1fa2ed;
+$brand-secondary: green;
+$brand-tertiary: yellow;
+
+
+// TODO: clean up names
 
 //set a brand main
 $primary: rgba(30,112,195,1.0); // main blue
@@ -30,11 +47,7 @@ $white: rgba(255,255,255,1.0);
 $shadows-06: rgba(0,0,0,0.6);
 
 
-// main brand color
-// TODO: change these to rgba please
-$brand-primary: #1fa2ed;
-$brand-secondary: green;
-$brand-tertiary: yellow;
+
 
 
 // brand list for creating darken arrays

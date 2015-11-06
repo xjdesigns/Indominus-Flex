@@ -10,10 +10,16 @@ $font-size-base: $font-size-root;
 $line-height-base: 1.1;
 $font-family-base: 'Lato', helvetica, sans-serif;
 
-$container: 1140px;
-$gutter-size: 24px;
 
-// variables go below here
+
+// MAIN //
+$container: 1140px; // our max width
+$gutter: 24px; // gutters do get cut in half
+$base-columns: 12; // columns
+
+
+
+// BREAKPOINTS //
 //breakpoints based off 16px base size
 $break-xl: 80em; // 1280
 $break-lg: 64em; // 1024
@@ -22,58 +28,34 @@ $break-sm: 20em; // 320
 
 
 
-// main brand color
-// TODO: change these to rgba please
+// BRAND COLORS //
 $brand-primary: #1fa2ed;
 $brand-secondary: green;
 $brand-tertiary: yellow;
+$brand-success: green;
+$brand-warning: gold;
+$brand-error: red;
 
+// here we add just base color names
+// this is so we can have brand colors
+// along with project colors if needed
+// we ref these as brand with intent to change per project
+$primary: rgba(30, 112, 195, 1.0); // main blue
+$secondary: rgba(135, 30, 195, 1.0); // main purple
+$tertiary: rgba(185, 105, 85, 1.0);
+$success: $brand-success;
+$warning: $brand-warning;
+$error: $brand-error;
 
-// TODO: clean up names
-
-//set a brand main
-$primary: rgba(30,112,195,1.0); // main blue
-$secondary: rgba(135,30,195,1.0); // main purple
-$btn: #fff; // TODO: set a base color
-$dark: rgba(10,10,10,1.0); // dark gray
-$light: rgba(200,200,200,1.0); // light gray
-
-// below add some custom colors
-
-// links go here
-// TODO: remove this trash, I would put this in a shame file, I feel dirty
-$link: rgba(30,112,195,1.0);
-$white: rgba(255,255,255,1.0);
-$shadows-06: rgba(0,0,0,0.6);
-
-
-
-
-
-// brand list for creating darken arrays
-// and lighten, could do this easy for alpha as well, i think
-// example: .brand-primary--light20
-@for $i from 1 through 4 {
-  .brand-primary--dark#{$i * 10} {
-    color: darken($brand-primary, $i * 10);
-  }
-  .brand-primary--light#{$i}0 {
-    color: lighten($brand-primary, $i * 10);
-  }
-  .brand-secondary--dark#{$i}0 {
-    color: darken($brand-secondary, $i * 10);
-  }
-  .brand-secondary--light#{$i}0 {
-    color: lighten($brand-secondary, $i * 10);
-  }
-}
-
-// greyscale array list
-// example: .greyscale-01
-$colors-list: #000 #1a1a1a #333 #4d4d4d #666 #808080 #999 #b3b3b3 #ccc #e5e5e5 #fff;
-@each $current-color in $colors-list {
-  $i: index($colors-list, $current-color);
-  .greyscale-0#{$i} {
-    color: $current-color;
-  }
-}
+// GREYSCALE //
+$greyscale-01: #000;
+$greyscale-02: #1a1a1a;
+$greyscale-03: #333;
+$greyscale-04: #4d4d4d;
+$greyscale-05: #666;
+$greyscale-06: #808080;
+$greyscale-07: #999;
+$greyscale-08: #b3b3b3;
+$greyscale-09: #ccc;
+$greyscale-10: #e5e5e5;
+$greyscale-11: #fff;

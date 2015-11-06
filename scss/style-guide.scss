@@ -21,16 +21,38 @@ header:not(.main-header) {
 footer {
 	background-color: rgba(0,0,0,0.9);
 	color: white;
-	padding: 2em;
+	padding: 1em 4em;
 	font-size: 1rem;
 	font-weight: 300;
+	text-align: right;
 	text-transform: uppercase;
+}
+.st-container {
+	margin: 24px auto 0;
+}
+.st-p {
+	margin: 24px 0;
+}
+.st-img {
+	width: 100%;
+	max-width: 100%;
+}
+.st-color-set {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.st-color {
+	flex: 0 0 70px;
+	height: 70px;
+	border-radius: 50%;
+	background-color: $greyscale-01;
 }
 
 section {
 	margin: 50px auto;
 	padding: 70px 20px;
-	border-bottom: 1px solid $dark;
+	border-bottom: 1px solid $greyscale-02;
 }
 .main {
 	transition: max-width 2s;
@@ -41,11 +63,11 @@ section {
 }
 
 .nav {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	bottom: 0;
 	left: 0;
-	background-color: $dark;
+	background-color: $greyscale-02;
 	transform: translateX(-100%);
 	transition: transform .3s;
 	&.active {
@@ -57,7 +79,7 @@ section {
 	position: relative;
 	text-align: right;
 	color: white;
-	background-color: $dark;
+	background-color: $greyscale-02;
 	padding: 2em;
 	&:before {
 		transform: translateY(-5px);
@@ -86,7 +108,7 @@ section {
 }
 .nav-menu {
 	list-style: none;
-	transform: translateY(1280px);
+	transform: translateY(100vh);
 	transition: transform .3s .3s;
 	&.active {
 		transform: translateY(0);
@@ -110,7 +132,7 @@ section {
 		right: 0;
 		bottom: 0;
 		z-index: 1;
-		background: $light;
+		background: $greyscale-10;
 		overflow: auto;
 		transform: translateX(-100%);
 		transition: transform .3s;
@@ -135,11 +157,11 @@ p {
 }
 #output {
 	background-color: rgba(240,240,240,1.0);
-	color: $dark;
+	color: $greyscale-02;
 	font-size: 14px;
 	margin: 40px 0;
 	padding: 10px 24px 15px;
-	box-shadow: inset 0px 0px 1px $dark, 0px 1px 12px rgba(0,0,0,.2);
+	box-shadow: inset 0px 0px 1px $greyscale-02, 0px 1px 12px rgba(0,0,0,.2);
 	overflow: auto;
 	@include border-radius(12px);
 }

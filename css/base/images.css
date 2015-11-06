@@ -1,0 +1,8 @@
+img {
+  width: 100%; }
+
+img.img {
+  max-width: 100%; }
+
+img.img--half {
+  width: 50%; }

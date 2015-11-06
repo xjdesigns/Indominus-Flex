@@ -9,25 +9,6 @@
 
 
 
-// ██╗   ██╗ █████╗ ██████╗
-// ██║   ██║██╔══██╗██╔══██╗
-// ██║   ██║███████║██████╔╝
-// ╚██╗ ██╔╝██╔══██║██╔══██╗
-//  ╚████╔╝ ██║  ██║██║  ██║
-//   ╚═══╝  ╚═╝  ╚═╝╚═╝  ╚═╝
-// variables for the build
-// NOTE: these can be moved into a global var partial
-$gutter: $gutter-size; // gets divided in half
-$base-columns: 12 10; // columns
-// media query breakpoints
-// TODO: what breakpoints do we want as a standard
-$break-xl: 80em; // 1280
-$break-lg: 64em; // 1024
-$break-md: 48em; // 768
-$break-sm: 30em; // 480
-
-
-
 // ███████╗ ██████╗ ██████╗
 // ██╔════╝██╔════╝██╔═══██╗
 // █████╗  ██║     ██║   ██║

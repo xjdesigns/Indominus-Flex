@@ -1,84 +1,3 @@
-.brand-primary--dark10 {
-  color: #1086c9; }
-
-.brand-primary--light10 {
-  color: #4eb6f1; }
-
-.brand-secondary--dark10 {
-  color: #004d00; }
-
-.brand-secondary--light10 {
-  color: #00b300; }
-
-.brand-primary--dark20 {
-  color: #0c669a; }
-
-.brand-primary--light20 {
-  color: #7dc9f5; }
-
-.brand-secondary--dark20 {
-  color: #001a00; }
-
-.brand-secondary--light20 {
-  color: #00e600; }
-
-.brand-primary--dark30 {
-  color: #09476a; }
-
-.brand-primary--light30 {
-  color: #adddf8; }
-
-.brand-secondary--dark30 {
-  color: black; }
-
-.brand-secondary--light30 {
-  color: #1aff1a; }
-
-.brand-primary--dark40 {
-  color: #05273b; }
-
-.brand-primary--light40 {
-  color: #dcf0fc; }
-
-.brand-secondary--dark40 {
-  color: black; }
-
-.brand-secondary--light40 {
-  color: #4dff4d; }
-
-.greyscale-01 {
-  color: #000; }
-
-.greyscale-02 {
-  color: #1a1a1a; }
-
-.greyscale-03 {
-  color: #333; }
-
-.greyscale-04 {
-  color: #4d4d4d; }
-
-.greyscale-05 {
-  color: #666; }
-
-.greyscale-06 {
-  color: #808080; }
-
-.greyscale-07 {
-  color: #999; }
-
-.greyscale-08 {
-  color: #b3b3b3; }
-
-.greyscale-09 {
-  color: #ccc; }
-
-.greyscale-010 {
-  color: #e5e5e5; }
-
-.greyscale-011 {
-  color: #fff; }
-
 body.hidden {
   overflow: hidden; }
 
@@ -94,15 +13,45 @@ header:not(.main-header) {
 footer {
   background-color: rgba(0, 0, 0, 0.9);
   color: white;
-  padding: 2em;
+  padding: 1em 4em;
   font-size: 1rem;
   font-weight: 300;
+  text-align: right;
   text-transform: uppercase; }
+
+.st-container {
+  margin: 24px auto 0; }
+
+.st-p {
+  margin: 24px 0; }
+
+.st-img {
+  width: 100%;
+  max-width: 100%; }
+
+.st-color-set {
+  width: 100%;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-justify-content: space-around;
+  -ms-flex-pack: distribute;
+  justify-content: space-around; }
+
+.st-color {
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 0 70px;
+  -ms-flex: 0 0 70px;
+  flex: 0 0 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: #000; }
 
 section {
   margin: 50px auto;
   padding: 70px 20px;
-  border-bottom: 1px solid #0a0a0a; }
+  border-bottom: 1px solid #1a1a1a; }
 
 .main {
   -webkit-transition: max-width 2s;
@@ -114,11 +63,11 @@ section {
   transition: max-width 2s; }
 
 .nav {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
-  background-color: #0a0a0a;
+  background-color: #1a1a1a;
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
@@ -135,7 +84,7 @@ section {
   position: relative;
   text-align: right;
   color: white;
-  background-color: #0a0a0a;
+  background-color: #1a1a1a;
   padding: 2em; }
 
 .menu-btn:before {
@@ -171,9 +120,9 @@ section {
 
 .nav-menu {
   list-style: none;
-  -webkit-transform: translateY(1280px);
-  -ms-transform: translateY(1280px);
-  transform: translateY(1280px);
+  -webkit-transform: translateY(100vh);
+  -ms-transform: translateY(100vh);
+  transform: translateY(100vh);
   -webkit-transition: -webkit-transform .3s .3s;
   transition: transform .3s .3s; }
 
@@ -198,7 +147,7 @@ section {
   right: 0;
   bottom: 0;
   z-index: 1;
-  background: #c8c8c8;
+  background: #e5e5e5;
   overflow: auto;
   -webkit-transform: translateX(-100%);
   -ms-transform: translateX(-100%);
@@ -225,11 +174,11 @@ p {
 
 #output {
   background-color: #f0f0f0;
-  color: #0a0a0a;
+  color: #1a1a1a;
   font-size: 14px;
   margin: 40px 0;
   padding: 10px 24px 15px;
-  box-shadow: inset 0px 0px 1px #0a0a0a, 0px 1px 12px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px 0px 1px #1a1a1a, 0px 1px 12px rgba(0, 0, 0, 0.2);
   overflow: auto;
   border-radius: 12px; }
 

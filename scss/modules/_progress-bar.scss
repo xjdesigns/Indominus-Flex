@@ -3,42 +3,64 @@
 // progress defaults to your primary color
 // customize away my friends
 $progress-bg: gray; // set for prog background
-$prog-radius: 15px; // change to value wanted globally
+$prog-radius: 24px; // change to value wanted globally
 
 .progress {
-	background-color: $progress-bg;
-	margin: 1em;
-	padding: .5em;
-	box-shadow: inset 0px 0px 3px rgba(0,0,0,0.7);
-	@include border-radius($prog-radius);
+	margin: 12px 0;
+	border-radius: ($prog-radius);
+	background-color: $greyscale-10;
+	border: 2px solid $greyscale-10;
 
 	> div {
 		background-color: $primary;
-		height: 100%;
-		padding: .5em;
-		@include border-radius($prog-radius);
+		min-height: 18px;
+		border-radius: ($prog-radius);
 	}
 
-	// I offer the option of using pure HTLM5
-	// so lets add that but be careful, Evergreen ONLY
+	// data-title
+	&--title {
+		position: relative;
+		padding-left: 32px;
+
+		&:before {
+			content: attr(data-title);
+			position: absolute;
+			top: 50%;
+			left: 0;
+			min-width: 24px;
+			min-height: 24px;
+			background-color: $brand-primary;
+			box-shadow: 0px 0px 0px 1px $greyscale-11, 0px 0px 0px 3px $brand-primary;
+			color: $greyscale-11;
+			font-size: .65rem;
+			font-weight: 800;
+			line-height: 2.5;
+			text-align: center;
+			border-radius: 50%;
+			transform: translateY(-50%);
+		}
+	}
+
+
+	// HTML5 progress bar, IE10 and up
 	progress[value] {
 		-webkit-appearance: none;
 		appearance: none;
 		border: none;
 		width: 100%;
+		min-height: 18px;
 		// for IE 10
 		color: $primary;
 	}
 	progress[value]::-webkit-progress-bar {
-		background-color: $progress-bg;
+		background-color: transparent;
 	}
 	progress[value]::-webkit-progress-value {
 		background-color: $primary;
-		@include border-radius($prog-radius);
+		border-radius: ($prog-radius);
 	}
 	progress[value]::-moz-progress-bar {
 		background-color: $primary;
-		@include border-radius($prog-radius);
+		border-radius: ($prog-radius);
 	}
 }
-

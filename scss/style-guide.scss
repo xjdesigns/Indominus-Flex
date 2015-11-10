@@ -1,4 +1,4 @@
-@import 'modules/var';
+@import 'base/var';
 @import 'modules/mixins';
 // TODO: Shame file
 // strongly consider making a shame file for the quick fixes and go back to clean
@@ -32,22 +32,17 @@ footer {
 }
 .st-p {
 	margin: 24px 0;
+	font-weight: 300;
+
+	&:first-child {
+		margin-top: 0;
+	}
 }
 .st-img {
 	width: 100%;
 	max-width: 100%;
 }
-.st-color-set {
-	width: 100%;
-	display: flex;
-	justify-content: space-around;
-}
-.st-color {
-	flex: 0 0 70px;
-	height: 70px;
-	border-radius: 50%;
-	background-color: $greyscale-01;
-}
+
 
 section {
 	margin: 50px auto;
@@ -67,6 +62,8 @@ section {
 	top: 0;
 	bottom: 0;
 	left: 0;
+	z-index: 1000;
+	width: 200px;
 	background-color: $greyscale-02;
 	transform: translateX(-100%);
 	transition: transform .3s;
@@ -81,6 +78,7 @@ section {
 	color: white;
 	background-color: $greyscale-02;
 	padding: 2em;
+	cursor: pointer;
 	&:before {
 		transform: translateY(-5px);
 	}
@@ -95,9 +93,14 @@ section {
 		width: 25px;
 		height: 3px;
 		background: white;
-		transition: transform .3s;
+		transition: transform .3s, background .2s;
 	}
 	&.active {
+		&:hover {
+			&:before, &:after {
+				background: $brand-error;
+			}
+		}
 		&:before {
 			transform: rotate(45deg);
 		}
@@ -108,6 +111,8 @@ section {
 }
 .nav-menu {
 	list-style: none;
+	cursor: pointer;
+	border-right: 5px solid $greyscale-02;
 	transform: translateY(100vh);
 	transition: transform .3s .3s;
 	&.active {
@@ -118,6 +123,7 @@ section {
 		color: white;
 		font-size: 14px;
 		font-weight: 300;
+		transition: background-color .3s ease;
 		&:hover {
 			background-color: $primary;
 		}
@@ -126,7 +132,7 @@ section {
 
 .section {
 	&.section-tflex {
-		position: absolute;
+		position: fixed;
 		top: 0;
 		left: 0;
 		right: 0;
@@ -143,25 +149,24 @@ section {
 }
 
 
-h1 {
+h1.st-headline {
 	font-family: 'Titillium Web', sans-serif;
 	font-size: 2rem;
 	font-weight: 900;
 	text-transform: uppercase;
 	margin: 20px 0 10px;
 }
-p {
-	font-size: 1rem;
-	font-weight: lighter;
-	line-height: 1.7;
-}
 #output {
-	background-color: rgba(240,240,240,1.0);
-	color: $greyscale-02;
-	font-size: 14px;
+	background-color: $greyscale-04;
+	color: $greyscale-09;
+	font-size: 12px;
+	font-family: monospace;
+	line-height: 1.7;
 	margin: 40px 0;
 	padding: 10px 24px 15px;
-	box-shadow: inset 0px 0px 1px $greyscale-02, 0px 1px 12px rgba(0,0,0,.2);
+	border: 1px solid $greyscale-04;
+	box-shadow: 2px 2px 1px rgba(0,0,0,.5);
+	text-shadow: 1px 1px 0px $greyscale-03;
 	overflow: auto;
 	@include border-radius(12px);
 }
@@ -172,4 +177,68 @@ p {
 	margin: 1em;
 	background: $primary;
 	border-radius: 12px;
+}
+
+.st-buttons {
+	margin: 24px 0;
+}
+
+.st-pill {
+	display: inline-block;
+	vertical-align: middle;
+	font-size: .75rem;
+	font-weight: 700;
+	padding: 1px 12px;
+	background-color: $brand-primary;
+	color: $greyscale-11;
+	border-radius: 12px;
+}
+
+/////////////////////////
+// SASS MAPS COLORS //
+////////////////////////
+.st-color-set {
+	width: 100%;
+	display: flex;
+	justify-content: space-around;
+}
+.st-color {
+	flex: 0 0 100px;
+	height: 100px;
+	border-radius: 50px;
+	box-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
+	position: relative;
+	&:after {
+		content: attr(data-color);
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		width: auto;
+		height: 20px;
+		font-size: 10px;
+		line-height: 2;
+		text-align: center;
+		text-shadow: 1px 1px 0px rgba(0,0,0,0.6);
+		color: $greyscale-10;
+		margin: auto;
+		background-color: rgba(30,30,30,.8);
+	}
+}
+// then lets loop the list
+$colors: (
+	primary: $brand-primary,
+	secondary: $brand-secondary,
+	tertiary: $brand-tertiary,
+	info: $brand-info,
+	success: $brand-success,
+	warning: $brand-warning,
+	error: $brand-error
+);
+
+@each $color, $bgcolor in $colors {
+	.st-color--#{$color} {
+		background-color: $bgcolor;
+	}
 }

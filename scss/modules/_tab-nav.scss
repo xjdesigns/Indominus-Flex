@@ -1,0 +1,31 @@
+/////////////
+// TABS //
+/////////////
+.tabs {
+  display: flex;
+  align-items: flex-start;
+
+  li {
+    position: relative;
+    text-align: center;
+    padding-bottom: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+
+    &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background-color: $greyscale-08;
+    }
+
+    &.is-active {
+      &:after {
+        background-color: $brand-primary;
+      }
+    }
+  }
+}

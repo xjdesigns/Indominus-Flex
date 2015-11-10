@@ -71,31 +71,6 @@
 // ██╔══╝  ██║     ██╔══╝   ██╔██╗
 // ██║     ███████╗███████╗██╔╝ ██╗
 // ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝
-// flex grow/shrink attributes for becoming a boss
-// example: .flex--auto--sm, .flex--no-grow--lg
-@mixin flex-gs($bp){
-  .flex {
-    &__item--#{$bp}-auto {
-      flex: 1 1 auto;
-    }
-    &__item--#{$bp}-grow {
-      flex-grow: 1;
-    }
-    &__item--#{$bp}-no-grow {
-      flex-grow: 0;
-    }
-    &__item--#{$bp}-shrink {
-      flex-shrink: 1;
-    }
-    &__item--#{$bp}-no-shrink {
-      flex-shrink: 0;
-    }
-    &__item--#{$bp}-none {
-      flex: none;
-    }
-  }
-}
-
 // NOTE: This is being excluded for now below in the BUILD
 // mixin for flex attribute grow/shrink
 @mixin flex-container($flex-col) {
@@ -204,7 +179,6 @@
 @mixin flex-grid($bp) {
   @include flex-columns($bp);
   @include flex-alignment($bp);
-  @include flex-gs($bp);
   @include flex-additional($bp);
 }
 

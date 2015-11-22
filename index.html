@@ -131,7 +131,7 @@
 
 		<div class="header-bar__brand">
 
-			<img class="brand-logo" src="https://placeimg.com/640/480/nature" alt="">
+			<img class="brand-logo brand-logo--circle" src="https://placeimg.com/640/480/nature" alt="">
 
 			<div class="brand-icon"><i class="material-icons">donut_small</i></div>
 
@@ -142,10 +142,64 @@
 		</div>
 
 		<div class="header-bar__nav">
+			<nav class="nav-header">
 
+				<button class="nav-header__btn nav-header__btn--search">
+					<i class="material-icons">search</i>
+					<input type="search" name="" id="">
+				</button>
+
+				<button class="nav-header__btn">
+					<i class="material-icons">get_app</i>
+				</button>
+
+				<button class="nav-header__btn">
+					<i class="material-icons">event</i>
+				</button>
+
+				<div class="nav-header__divider"></div>
+
+				<button class="nav-header__btn">
+					<i class="material-icons">home</i>
+				</button>
+
+				<button class="nav-header__btn">
+					<i class="material-icons">find_replace</i>
+				</button>
+
+				<button class="nav-header__btn nav-dropdown" data-icon="arrow_drop_down">
+					<i class="material-icons">list</i>
+				</button>
+
+				<div class="nav-header__divider"></div>
+
+				<button class="nav-header__btn nav-dropdown dropdown-is-open" id="menu-nav-btn" data-icon="arrow_drop_down">
+					<i class="material-icons">receipt</i>
+
+					<ul class="nav-dropdown__menu">
+						<li><img src="https://placeimg.com/640/480/weather" alt="" class="menu-user-img">My Account</li>
+						<li><i class="material-icons">settings</i>item</li>
+						<li><i class="material-icons">polymer</i>the best thing</li>
+						<li><i class="material-icons">account_box</i>account</li>
+					</ul>
+
+				</button>
+
+			</nav>
 		</div>
 
 	</header>
+	<div class="header-ext">
+
+		<div class="header-ext__left">
+			<h1>Hello World</h1>
+		</div>
+
+		<div class="header-ext__right">
+
+		</div>
+
+	</div>
 
 	<!-- HEADER 2 of 2 -->
 	<div class="container st-container" id="st-header">
@@ -154,14 +208,79 @@
 
 				<h1 class="st-headline">HEADER BAR CODE SNIPPET</h1>
 
-<!-- <pre id="output"><code class="code-sample">
-.brand-primary
-.brand-primary
-.brand-primary
-.brand-primary
-.brand-primary
+<pre id="output"><code class="code-sample">
+<header class="header-bar">
 
-</code></pre> -->
+	<div class="header-bar__brand">
+
+		<img class="brand-logo brand-logo--circle" src="https://placeimg.com/640/480/nature" alt="">
+
+		<div class="brand-icon"><i class="material-icons">donut_small</i></div>
+
+		<div class="brand-title">
+			Leadpages®
+		</div>
+
+	</div>
+
+	<div class="header-bar__nav">
+		<nav class="nav-header">
+
+			<button class="nav-header__btn nav-header__btn--search">
+				<i class="material-icons">search</i>
+				<input type="search" name="" id="">
+			</button>
+
+			<button class="nav-header__btn">
+				<i class="material-icons">get_app</i>
+			</button>
+
+			<button class="nav-header__btn">
+				<i class="material-icons">event</i>
+			</button>
+
+			<div class="nav-header__divider"></div>
+
+			<button class="nav-header__btn">
+				<i class="material-icons">home</i>
+			</button>
+
+			<button class="nav-header__btn">
+				<i class="material-icons">find_replace</i>
+			</button>
+
+			<button class="nav-header__btn nav-dropdown" data-icon="arrow_drop_down">
+				<i class="material-icons">list</i>
+			</button>
+
+			<div class="nav-header__divider"></div>
+
+			<button class="nav-header__btn nav-dropdown dropdown-is-open" id="menu-nav-btn" data-icon="arrow_drop_down">
+				<i class="material-icons">receipt</i>
+
+				<ul class="nav-dropdown__menu">
+					<li><img src="https://placeimg.com/640/480/weather" alt="" class="menu-user-img">My Account</li>
+					<li><i class="material-icons">settings</i>item</li>
+					<li><i class="material-icons">polymer</i>the best thing</li>
+					<li><i class="material-icons">account_box</i>account</li>
+				</ul>
+
+			</button>
+
+		</nav>
+	</div>
+
+</header>
+<div class="header-ext">
+ <div class="header-ext__left">
+  <h1>Hello World</h1>
+  </div>
+ <div class="header-ext__right">
+
+ </div>
+</div>
+
+</code></pre>
 
 			</div>
 		</div>

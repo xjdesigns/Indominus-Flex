@@ -8,6 +8,10 @@ $(document).ready(function() {
     $('.section-tflex').removeClass('active');
     $('body').removeClass('hidden');
   });
+  $('.infobar__left').click(function() {
+    $('.info-nav, .infobar__right').toggleClass('is-active');
+  });
+
 
   // clicking outside the menu toggles class
   $(document).on('click', function(event) {
@@ -25,13 +29,14 @@ $(document).ready(function() {
   });
 
 
-
   var activeState = 'active';
   var menuButton = document.querySelector('.menu-btn');
   var navBar = document.querySelector('.nav');
   var navMenu = document.querySelector('.nav-menu');
   var iconCircle = document.querySelectorAll('.icon-circle');
   var bodyTag = document.querySelectorAll('body');
+  var menuItem = document.querySelector('#menu-list');
+  var innerNav = document.querySelector('.nav__inner');
 
   var eventHandler = function() {
     var toggle = event.target;
@@ -59,8 +64,35 @@ $(document).ready(function() {
         }
       }
     }
+    if (toggle.id === 'menu-list') {
+      event.preventDefault();
+      hasActiveClass: {
+        if(innerNav.classList.contains(activeState)) {
+          innerNav.classList.remove(activeState);
+        } else {
+          innerNav.classList.add(activeState);
+        }
+      }
+    }
   };
   document.addEventListener('click', eventHandler, false);
+  document.addEventListener('click', eventHandler, false);
+
+  // sticky header
+  window.onscroll = function(e) {
+    var offsetY = window.pageYOffset;
+    var header = document.querySelector('.st-header');
+    var headerHeight = header.offsetHeight;
+    if(offsetY > headerHeight) {
+      header.classList.add('sticky-header');
+      document.body.style.marginTop = headerHeight + 'px';
+    } else {
+      header.classList.remove('sticky-header');
+      document.body.removeAttribute('style');
+    }
+  };
+
+
 
 
 
@@ -68,31 +100,49 @@ $(document).ready(function() {
   // then we can use these to be material
 
   // update the range output while range is moving
-  var rangeInput = document.querySelector('.input--range__slider');
-  var valueOutput = document.querySelector('.inputVal');
-  var maxAttr = rangeInput.getAttribute('max');
-  var maxVal = document.querySelector('.maxVal');
+  // var rangeInput = document.querySelector('.input--range__slider');
+  // var valueOutput = document.querySelector('.inputVal');
+  // var maxAttr = rangeInput.getAttribute('max');
+  // var maxVal = document.querySelector('.maxVal');
+  //
+  // // set the value
+  // valueOutput.innerHTML = rangeInput.value;
+  //
+  // if(maxAttr !== null) {
+  //   maxVal.innerHTML = '\/' + maxAttr;
+  // } else {
+  //   maxVal.style.display = 'none';
+  // }
+  //
+  // rangeInput.addEventListener('mousemove', function(event) {
+  //   valueOutput.innerHTML = rangeInput.value;
+  // }, false);
+  //
+  // // text input
+  // // grab the input and spit the value into the output
+  // var inputText = document.querySelector('#inText');
+  // var outputText = document.querySelector('#outputText');
+  //
+  // inputText.addEventListener('keyup', function(event) {
+  //   outputText.innerHTML = inputText.value.length;
+  // }, false);
 
-  // set the value
-  valueOutput.innerHTML = rangeInput.value;
 
-  if(maxAttr !== null) {
-    maxVal.innerHTML = '\/' + maxAttr;
-  } else {
-    maxVal.style.display = 'none';
-  }
 
-  rangeInput.addEventListener('mousemove', function(event) {
-    valueOutput.innerHTML = rangeInput.value;
-  }, false);
 
-  // text input
-  // grab the input and spit the value into the output
-  var inputText = document.querySelector('#inText');
-  var outputText = document.querySelector('#outputText');
 
-  inputText.addEventListener('keyup', function(event) {
-    outputText.innerHTML = inputText.value.length;
-  }, false);
+  // SMOOTH SCROLL
+  $('a[href*=#]:not([href=#])').click(function() {
+    if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') && location.hostname == this.hostname) {
+      var target = $(this.hash);
+      target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+      if (target.length) {
+        $('html,body').animate({
+          scrollTop: target.offset().top
+        }, 500);
+        return false;
+      }
+    }
+  });
 
 });

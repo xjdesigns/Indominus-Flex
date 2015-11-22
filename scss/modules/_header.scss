@@ -1,0 +1,31 @@
+// MAYBE MOVE THESE TO THE VAR FILE
+// UNSURE AS OF 11-22-15
+// TODO: DECIDE ON THIS
+$header-height: 72px;
+
+///////////////
+// HEADER //
+///////////////
+.header-bar {
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  align-items: center;
+  min-height: $header-height;
+  background-color: $brand-primary;
+
+  &__brand {
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+
+///////////////////////
+// BRAND ELEMENTS //
+///////////////////////
+.brand-logo {
+  width: 48px;
+  height: 48px;
+}

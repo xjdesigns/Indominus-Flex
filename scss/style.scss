@@ -14,7 +14,7 @@
 // @import "modules/media-block"; // Nicole Sullivans Media Object
 // @import "modules/form"; // form elements
 // @import "modules/button"; // Buttons
-// @import "modules/components.data-tips"; // Tooltips
+@import "modules/components.data-tips"; // Tooltips
 
 // these are possible additions I can make but well see
 // @import "modules/ranges/range.global.scss";
@@ -31,6 +31,9 @@
 @import "modules/mixins"; // mixins for writing dry code
 @import "modules/progress-bar"; // Progress Bar styling
 @import "modules/tab-nav"; // tabbed navigation
+@import "modules/steps-bar"; // steps bar
+@import "modules/info-bar"; // info bar and all it can do
+@import "modules/header";
 
 // all other styling is in the SHAME FILE!!
 // Read a great article on creating one to help write better code

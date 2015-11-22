@@ -7,7 +7,7 @@
 	<title>Indominus Flex</title>
 	<link rel="stylesheet" href="css/em-reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Exo+2:400,800|Titillium+Web:400,900' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Exo+2:400,800|Titillium+Web:400,900|Roboto:300,400,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -15,7 +15,7 @@
 </head>
 <body>
 
-	<header>
+	<header class="st-header">
 		<h1 class="st-headline">Indominus Flex</h1>
 	</header>
 
@@ -23,15 +23,25 @@
 		<div class="menu-btn"></div>
 		<ul class="nav-menu">
 			<li id="flexgrid">flexgrid</li>
-			<li>inputs</li>
-			<li>buttons</li>
-			<li>checkbox</li>
+			<a href="#typography"><li id="menu-list">Typography</li></a>
+			<a href="#list"><li>lists</li></a>
+			<a href="#buttons"><li>buttons</li></a>
 		</ul>
+
+		<nav class="nav__inner">
+			<ul>
+				<li>Main</li>
+				<li>Lists</li>
+				<li>Blockquotes</li>
+				<li>Articles</li>
+				<li>Pseudos</li>
+			</ul>
+		</nav>
 	</nav>
 
 
 
-	<footer>
+	<footer class="st-footer">
 		Created by Jason Jacobson
 	</footer>
 
@@ -101,6 +111,236 @@
 	</div>
 
 
+
+	<!-- HEADER 1 of 2 -->
+	<div class="container st-container" id="st-header">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+
+				<h1 class="st-headline">HEADER BAR</h1>
+				<p class="st-p">
+					The header bar is the center piece of the framework. This is the consistent identifier of the branding and ties everything else together. Allowing the user to identify with the most common element of a page and keeping it consistent and all interactions equal, users can always identify with the company regardless of the product being servied.
+				</p>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- THE HEADER ITSELF, NEEDS TO BE FLUID -->
+	<header class="header-bar">
+
+		<div class="header-bar__brand">
+
+			<img class="brand-logo" src="https://placeimg.com/640/480/nature" alt="">
+
+			<div class="brand-icon"><i class="material-icons">donut_small</i></div>
+
+			<div class="brand-title">
+				Leadpages®
+			</div>
+
+		</div>
+
+		<div class="header-bar__nav">
+
+		</div>
+
+	</header>
+
+	<!-- HEADER 2 of 2 -->
+	<div class="container st-container" id="st-header">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+
+				<h1 class="st-headline">HEADER BAR CODE SNIPPET</h1>
+
+<!-- <pre id="output"><code class="code-sample">
+.brand-primary
+.brand-primary
+.brand-primary
+.brand-primary
+.brand-primary
+
+</code></pre> -->
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- info-bar -->
+	<div class="container st-container" id="info-bar">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+
+				<h1 class="st-headline">INFO BARS</h1>
+				<p class="st-p">
+					Info bars are an essential part to the brand. This has many things going on so the docs are very important here!!! TODO::::
+				</p>
+
+				<p class="st-p">
+					For info bars there is minimal setup you should need to do. Look below at the example and use this as a guide. <span class="st-pill">NOTE: All inner elements are accounted for as div's</span>. This allows to account with minimal CSS needed to create a dynamic infobar. Inner conents of the layout <span class="st-pill">div</span> can be other elements.
+				</p>
+
+				<p class="st-p">
+					If you are looking for coloring or active states, simply add the <span class="st-pill">infobar--active</span> class as a modifier. This sets the tab color to <span class="st-pill">brand-primary</span>.
+				</p>
+
+				<p class="st-p">
+
+				</p>
+
+
+				<div class="st-info-bar">
+
+					<div class="infobar infobar--active">
+
+						<div class="infobar__left">
+
+							<div class="icon"><i class="material-icons">important_devices</i></div>
+							<div class="title">My Page Title</div>
+
+						</div>
+
+						<div class="infobar__right">
+
+							<div class="user-info">
+								views: 0
+							</div>
+
+							<div class="metrics">
+								<div class="metrics__bar"></div>
+								<div class="metrics__bar"></div>
+								<div class="metrics__bar"></div>
+							</div>
+
+							<div class="info-tools">
+								<i class="material-icons">build</i>
+								<i class="material-icons">toc</i>
+								<i class="material-icons">settings_cell</i>
+							</div>
+
+							<div class="info-nav">
+								<i class="material-icons">thumb_up</i>
+								<i class="material-icons">timeline</i>
+								<i class="material-icons">turned_in</i>
+								<i class="material-icons">settings_power</i>
+							</div>
+
+						</div>
+
+					</div>
+
+				</div>
+
+<pre id="output"><code class="code-sample">
+<div class="infobar">
+
+ <div class="infobar__left">
+  <div class="icon"><i class="material-icons">important_devices</i></div>
+  <div class="title">My Page Title</div>
+ </div>
+
+ <div class="infobar__right">
+  <div class="user-info">views: 0</div>
+  <div class="metrics">
+   <div class="metrics__bar"></div>
+   <div class="metrics__bar"></div>
+   <div class="metrics__bar"></div>
+  </div>
+  <div class="info-nav">
+   <i class="material-icons">settings_power</i>
+   <i class="material-icons">thumb_up</i>
+   <i class="material-icons">timeline</i>
+   <i class="material-icons">turned_in</i>
+  </div>
+</div>
+
+</div>
+
+</code></pre>
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- STEPS BAR -->
+	<div class="container st-container" id="steps-bar">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+
+				<h1 class="st-headline">STEPS BAR</h1>
+				<p class="st-p">
+					A steps progress bar is helpful when walking a user through a series of steps that are required to proceed.
+				</p>
+
+				<p class="st-p">
+					For steps you need an unordered list, add a base class of <span class="st-pill">steps-bar</span> to your element and all increments will be handled by the counter on the element. There can be a max of how many steps and how wide your container is, for this you will want to be cautious and rethink this.
+					<br><br>
+					FYI -- CSS Counters can count and step for you.
+				</p>
+
+				<p class="st-p">
+					For steps there is a top level class modifier of <span class="st-pill">steps-bar--required</span> which adds a disabled look and cursor to elements. This allows you to declare this once if its required then you will use JS to handle adding the state class of <span class="st-pill">is-active</span> to your active step.
+				</p>
+
+
+				<div class="st-steps-bar">
+
+					<ul class="steps-bar">
+						<li>enter email</li>
+						<li>add address</li>
+						<li>complete</li>
+						<li>onboarding</li>
+						<li>finish</li>
+						<li>done</li>
+					</ul>
+
+				</div>
+
+				<div class="st-steps-bar">
+
+					<ul class="steps-bar steps-bar--required">
+						<li>Step</li>
+						<li>Step</li>
+						<li class="is-active">Step</li>
+						<li>Step</li>
+						<li>Step</li>
+						<li>Step</li>
+					</ul>
+
+				</div>
+
+<pre id="output"><code class="code-sample">
+<ul class="steps-bar steps-bar--required">
+NORMAL STEPS BAR
+ <li>Step</li>
+ <li>Step</li>
+ <li>Step</li>
+ <li>Step</li>
+</ul>
+
+REQUIRED STEPS BAR
+<ul class="steps-bar steps-bar--required">
+ <li>Step</li>
+ <li>Step</li>
+ <li class="is-active">Step</li>
+ <li>Step</li>
+ <li>Step</li>
+ <li>Step</li>
+</ul>
+
+</code></pre>
+
+			</div>
+		</div>
+	</div>
+
+
+
 	<!-- TABS -->
 	<div class="container st-container">
 		<div class="flex flex--12 flex--xs-middle">
@@ -111,19 +351,31 @@
 					Tabbed navigation helps you keep active panes while notifying the user.
 				</p>
 
+				<p class="st-p">
+					The tabbed feature has a couple options for setting up. A base class of <span class="st-pill">tabs</span> is added to the <span class="st-pill">ul / ol</span>, this handles all the base styling. You can wrap your inner contents in <span class="st-pill">anchors</span> for clickable actions.
+				</p>
+
+				<p class="st-p">
+					When you want to add a state to your <span class="st-pill">li</span> add the <span class="st-pill">is-active</span> class.
+				</p>
+
 
 				<div class="st-tabs">
 
 					<ul class="tabs">
-						<li class="is-active">Menu</li>
-						<li>Settings</li>
-						<li>Exit</li>
+						<li class="is-active"><a href="#">Menu</a></li>
+						<li><a href="#">Settings</a></li>
+						<li><a href="#">Exit</a></li>
 					</ul>
 
 				</div>
 
 <pre id="output"><code class="code-sample">
-
+<ul class="tabs">
+ <li class="is-active">Menu</li>
+ <li>Settings</li>
+ <li>Exit</li>
+</ul>
 
 </code></pre>
 
@@ -162,14 +414,17 @@
 				</div>
 
 <pre id="output"><code class="code-sample">
+PROGRESS BAR USING DIVs
 <div class="progress">
  <div style="width: 50%;"></div>
 </div>
 
+PROGRESS BAR USING HTML PROGRESS TAG
 <div class="progress">
  <progress value="25" min="0" max="100"></progress>
 </div>
 
+PROGRESS BAR USING DATA ATTRIBUTES
 <div class="progress progress--title" data-title="EL">
  <div style="width: 70%;"></div>
 </div>
@@ -188,7 +443,7 @@
 
 				<h1 class="st-headline">ICONOGRAPHY</h1>
 				<p class="st-p">
-					The Indominus Flex was built around the idea that adding icons to specific elements should be easy and try using as little markup as possible. Sure, you can still add the same old <span class="st-pill">i</span> tag but isn't it more fun to do cooler things. With that I have added a attribute called <span class="st-pill">data-icon</span> to specific elements that you add your ligature too, mainly used for material affects. This attribute in turn when added, adds all the neccesary rules for the <span class="st-pill">before & after</span> pseudo to use the icon with the font-family as well. So this should be a seemless process.
+					The Indominus Flex was built around the idea that adding icons to specific elements should be easy and try using as little markup as possible. Sure, you can still add the same old <span class="st-pill">i</span> tag but isn't it more fun to do cooler things. With that I have added a attribute called <span class="st-pill">data-icon</span> to specific elements that you add your ligature too, mainly used for material affects. This attribute in turn when added, adds all the neccesary rules for the <span class="st-pill">::before & ::after</span> pseudo to use the icon with the font-family as well. So this should be a seemless process.
 					<br>
 					example: <span class="st-pill">data-icon="delete"</span>
 				</p>
@@ -211,6 +466,10 @@
 				</p>
 
 				<p class="st-p">
+					COMING SOON OFF CANVAS DISPLAY WITH DETAILS!!!
+				</p>
+
+				<p class="st-p">
 					<span class="st-pill">p</span>
 					<span class="st-pill">h1-6</span>
 					<span class="st-pill">a</span>
@@ -221,12 +480,24 @@
 					<span class="st-pill">span</span>
 				</p>
 
+				<div class="st-blockquote">
+
+					<blockquote>
+						I am default block quote bro!
+					</blockquote>
+
+					<blockquote class="blockq blockq--quotation">
+						I am quotation block quote bro!
+					</blockquote>
+
+				</div>
+
 			</div>
 		</div>
 	</div>
 
 	<!-- BUTTONS -->
-	<div class="container st-container">
+	<div class="container st-container" id="buttons">
 		<div class="flex flex--12 flex--xs-middle">
 			<div class="flex__item--xs-12">
 
@@ -352,7 +623,7 @@
 	<!-- START T-FLEX, THIS MENU IS OFF CANVAS -->
 	<div class="section section-tflex">
 
-		<section class="container">
+		<section class="container st-section">
 				<button class="back-btn btn btn--primary">back</button>
 				<div>
 
@@ -392,10 +663,12 @@
 				<div>
 <pre id="output"><code class="code-sample">
 <div class="flex flex--12">
+__ITEMS
  <div class="flex__item--xs-3"></div>
  <div class="flex__item--xs-3"></div>
  <div class="flex__item--xs-3"></div>
  <div class="flex__item--xs-3"></div>
+__OFFSETS
  <div class="flex__item--md-2 flex__offset--md-10"></div>
  <div class="flex__item--md-6 flex__offset--md-6"></div>
  <div class="flex__item--md-10 flex__offset--md-2"></div>
@@ -446,6 +719,16 @@
 				<div>
 <pre id="output"><code class="code-sample">
 <div class="flex flex--12 flex--md-top">
+ <div class="flex__item--xs-3"></div>
+ <div class="flex__item--xs-3"></div>
+</div>
+
+<div class="flex flex--12 flex--md-middle">
+ <div class="flex__item--xs-3"></div>
+ <div class="flex__item--xs-3"></div>
+</div>
+
+<div class="flex flex--12 flex--md-bottom">
  <div class="flex__item--xs-3"></div>
  <div class="flex__item--xs-3"></div>
 </div>

@@ -4,13 +4,40 @@
 .tabs {
   display: flex;
   align-items: flex-start;
+  font-weight: 300;
+
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
 
   li {
     position: relative;
     text-align: center;
     padding-bottom: 12px;
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 24px;
+    padding-right: 24px;
+
+    &:hover {
+      &:before {
+        width: 100%;
+        background-color: $greyscale-06;
+      }
+    }
+
+    &:before, &:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      height: 2px;
+      transition: width .2s linear;
+    }
+
+    &:before {
+      width: 0;
+      z-index: 1;
+    }
 
     &:after {
       content: '';
@@ -23,8 +50,11 @@
     }
 
     &.is-active {
+      font-weight: 400;
+
       &:after {
         background-color: $brand-primary;
+        z-index: 2;
       }
     }
   }

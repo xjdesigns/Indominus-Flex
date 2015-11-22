@@ -9,7 +9,7 @@ body.hidden {
 	// applies to body when elements do not want scrolling of body
 	overflow: hidden;
 }
-header:not(.main-header) {
+header.st-header:not(.main-header) {
 	background-color: $primary;
 	color: white;
 	padding: 2em;
@@ -17,18 +17,39 @@ header:not(.main-header) {
 	font-weight: 300;
 	text-transform: uppercase;
 	text-align: center;
+
+	&.sticky-header {
+		position: fixed;
+		top: 0;
+		left: 0;
+		right: 0;
+		z-index: 1;
+		padding: 0;
+		box-shadow: 0px 0px 2px rgba(0, 0, 0, .6);
+		animation: autoHeight .3s linear;
+	}
 }
-footer {
+@keyframes autoHeight {
+	0% {
+		transform: translate3d(0, -100%, 0)
+	}
+	100% {
+		transform: translate3d(0, 0, 0);
+	}
+}
+footer.st-footer {
 	background-color: rgba(0,0,0,0.9);
 	color: white;
 	padding: 1em 4em;
-	font-size: 1rem;
+	font-size: .875rem;
 	font-weight: 300;
 	text-align: right;
 	text-transform: uppercase;
 }
 .st-container {
 	margin: 24px auto 0;
+	padding-bottom: 48px;
+	// border-bottom: 1px solid rgba(0,0,0,0.3);
 }
 .st-p {
 	margin: 24px 0;
@@ -37,6 +58,10 @@ footer {
 	&:first-child {
 		margin-top: 0;
 	}
+	&:last-of-type {
+		padding-bottom: 48px;
+		border-bottom: 1px solid $greyscale-10;
+	}
 }
 .st-img {
 	width: 100%;
@@ -44,10 +69,9 @@ footer {
 }
 
 
-section {
+section.st-section {
 	margin: 50px auto;
 	padding: 70px 20px;
-	border-bottom: 1px solid $greyscale-02;
 }
 .main {
 	transition: max-width 2s;
@@ -64,11 +88,49 @@ section {
 	left: 0;
 	z-index: 1000;
 	width: 200px;
+	font-weight: 300;
+	color: $greyscale-11;
 	background-color: $greyscale-02;
 	transform: translateX(-100%);
 	transition: transform .3s;
 	&.active {
 		transform: translateX(0);
+	}
+	&__inner {
+		position: absolute;
+		top: 64px;
+		left: 100%;
+		padding: 12px 0;
+		min-width: 200px;
+		min-height: 100vh;
+		background-color: $greyscale-03;
+		transform: translateX(calc(-100% + -100%));
+		transition: transform .5s ease-in-out;
+		&.active {
+			transform: translateX(0);
+		}
+		li {
+			padding: 12px 24px;
+			font-size: .675rem;
+			position: relative;
+			z-index: 1;
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				bottom: 0;
+				z-index: -1;
+				width: 0%;
+				background-color: $brand-primary;
+				transition: width .3s ease-in-out;
+			}
+			&:hover {
+				&:after {
+					width: 100%;
+				}
+			}
+		}
 	}
 }
 .menu-btn {
@@ -117,6 +179,10 @@ section {
 	transition: transform .3s .3s;
 	&.active {
 		transform: translateY(0);
+	}
+	a {
+		text-decoration: none;
+		color: inherit;
 	}
 	li {
 		padding: 1em 2em;
@@ -192,6 +258,10 @@ h1.st-headline {
 	background-color: $brand-primary;
 	color: $greyscale-11;
 	border-radius: 12px;
+}
+
+.st-steps-bar {
+	margin: 48px 0;
 }
 
 /////////////////////////

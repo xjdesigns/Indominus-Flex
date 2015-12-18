@@ -6,14 +6,14 @@ $progress-bg: gray; // set for prog background
 $prog-radius: 24px; // change to value wanted globally
 
 .progress {
-	margin: 12px 0;
+	margin: 32px 0;
 	border-radius: ($prog-radius);
 	background-color: $greyscale-10;
 	border: 2px solid $greyscale-10;
 
 	> div {
 		background-color: $primary;
-		min-height: 18px;
+		min-height: 6px;
 		border-radius: ($prog-radius);
 	}
 
@@ -46,9 +46,10 @@ $prog-radius: 24px; // change to value wanted globally
 	progress[value] {
 		-webkit-appearance: none;
 		appearance: none;
+		display: block; // progress is inline-block by nature
 		border: none;
 		width: 100%;
-		min-height: 18px;
+		height: 6px;
 		// for IE 10
 		color: $primary;
 	}

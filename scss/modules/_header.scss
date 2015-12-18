@@ -17,10 +17,10 @@ $header-height: 72px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
   position: relative;
 
-  border-bottom: 1px solid $greyscale-11;
+  border-bottom: 1px solid $greyscale-04;
 
   color: $greyscale-11;
-  background-color: $brand-primary;
+  background-color: $greyscale-08;
 
   &__brand {
     flex: 1 1 auto;
@@ -58,6 +58,43 @@ $header-height: 72px;
   line-height: 1;
 }
 
+//////////////////
+// CLOSE BTN //
+//////////////////
+.nav-btn-close {
+  display: block;
+  height: 3px;
+  width: 16px;
+  position: relative;
+
+  &:before, &:after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: $greyscale-11;
+    transition: transform .3s;
+  }
+  &:before {
+    transform: translateY(-3px);
+  }
+  &:after {
+    transform: translateY(3px);
+  }
+}
+// ACTIVE STATE
+.nav-header__btn.active {
+  .nav-btn-close {
+    &:before {
+      transform: rotate(-45deg);
+    }
+    &:after {
+      transform: rotate(45deg);
+    }
+  }
+}
 
 
 /////////////////////
@@ -83,13 +120,17 @@ $header-height: 72px;
 
     &:hover:not(.nav-header__btn--search),
     &.active {
-      border-color: $greyscale-11;
-      background-color: $greyscale-11;
-      color: $brand-primary;
+      border-color: $brand-primary;
+      background-color: $brand-primary;
+      color: $greyscale-11;
 
       &:after {
         color: $greyscale-11;
       }
+    }
+
+    &:focus {
+      outline: 0;
     }
 
     &:not(:last-child) {
@@ -155,7 +196,7 @@ $header-height: 72px;
     overflow: hidden;
     transition: max-height .3s, overflow .5s .1s, transform .3s;
 
-    background-color: $brand-primary;
+    background-color: $greyscale-08;
     color: $greyscale-11;
 
     &::after {
@@ -167,7 +208,7 @@ $header-height: 72px;
     	height: 0;
     	width: 0;
       border-color: rgba(0, 0, 0, 0);
-    	border-bottom-color: $brand-primary;
+    	border-bottom-color: $greyscale-08;
     	border-width: 6px;
     }
 
@@ -253,11 +294,13 @@ $header-height: 72px;
 // HEADER EXTENDED //
 ////////////////////////
 .header-ext {
-  background-color: $brand-primary;
-  min-height: 230px;
+  background-color: $greyscale-08;
   transition: min-height .3s;
+  padding: 48px 0 0;
+  color: $greyscale-11;
 
   h1 {
+    margin-bottom: 48px;
     transition: font-size .3s;
   }
 
@@ -267,5 +310,28 @@ $header-height: 72px;
       font-size: 2rem;
       transition: font-size .3s;
     }
+  }
+}
+
+
+//////////////////////
+// FLYOUT BUTTON //
+//////////////////////
+.header-toggle {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .3s ease-in-out;
+
+  &.is-open {
+    max-height: 200px;
+  }
+
+  .flyout-btn {
+    display: block;
+    width: 60px;
+    height: 32px;
+    margin: 0 auto;
+    background-color: $greyscale-08;
+    border-radius: 0px 0px 3px 3px;
   }
 }

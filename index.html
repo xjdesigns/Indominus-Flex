@@ -7,7 +7,7 @@
 	<title>Indominus Flex</title>
 	<link rel="stylesheet" href="css/em-reset.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
-	<link href='http://fonts.googleapis.com/css?family=Lato:300,400,700|Exo+2:400,800|Titillium+Web:400,900|Roboto:300,400,700' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Exo+2:400,800|Titillium+Web:400,900|Roboto:100,300,400,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
@@ -111,6 +111,222 @@
 	</div>
 
 
+	<!-- FORMS -->
+	<div class="container st-container" id="st-forms">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+
+				<h1 class="st-headline">FORMS</h1>
+				<p class="st-p">
+					Forms, need I say more. MORE INFO AND DOCS COMING SOON
+				</p>
+
+
+				<div class="st-forms">
+
+					<form action="GET" class="form form--stacked">
+						<label class="label" for="firstName">Name</label>
+						<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
+						<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10"></textarea>
+						<div class="form-group form-group--inline">
+							<label class="label" for="firstName">Name</label>
+							<input type="text" class="input">
+							<label class="label" for="firstName">Name</label>
+							<input type="text" class="input">
+						</div>
+					</form>
+
+				</div>
+
+	<!-- <pre id="output"><code class="code-sample">
+	.brand-primary
+	.brand-primary
+	.brand-primary
+	.brand-primary
+	.brand-primary
+
+	</code></pre> -->
+
+			</div>
+		</div>
+	</div>
+
+	<!-- TOASTS -->
+	<div class="container st-container" id="st-toasts">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+
+				<h1 class="st-headline">TOASTS</h1>
+				<p class="st-p">
+					Toasts allow you to give users real time notifications.
+					<br><br>
+					<button class="btn btn--primary" id="toaster-call" onclick="toaster('move bitch get out the way')">Click Me</button>
+				</p>
+
+
+				<div class="st-toasts">
+
+					<!-- <div class="toaster">
+						<div class="toast">I am Toast!</div>
+					</div> -->
+
+				</div>
+
+<!-- <pre id="output"><code class="code-sample">
+.brand-primary
+.brand-primary
+.brand-primary
+.brand-primary
+.brand-primary
+
+</code></pre> -->
+
+			</div>
+		</div>
+	</div>
+
+
+
+	<!-- DATA TIPS -->
+	<div class="container st-container">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+
+				<h1 class="st-headline">DATA TIPS</h1>
+				<p class="st-p">
+					A css only solution for tooltips using <span class="st-pill">data-attributes</span>.
+					<br>
+					<span class="st-pill st-pill--warning">Warning:</span> The tooltip adds positioning of <span class="st-pill">relative</span>.
+				</p>
+
+
+				<div class="st-data-tips">
+
+					<span class="data-tip-top" data-tips="Top Tooltip">Top Tooltip</span>
+					<span class="data-tip-left" data-tips="Left Tooltip">Left Tooltip</span>
+					<span class="data-tip-right" data-tips="Right Tooltip">Right Tooltip</span>
+					<span class="data-tip-bottom" data-tips="Bottom Tooltip">Bottom Tooltip</span>
+					<span class="data-tip-top data-tip-wrap" data-tips="For when you need more room to work with and have it wrap, use the data-tip-wrap class">Tooltip Wrap</span>
+
+				</div>
+
+				<h1 class="st-headline">ADVANCED DATA TIPS</h1>
+				<p class="st-p">
+					A css only solution for data tips that can contain markup. This has more setup but is more flexible with containing links, buttons, pills or any mark up.
+					This also uses proper BEM naming.
+				</p>
+
+				<p class="st-p">
+					<span class="st-pill st-pill--warning">Warning:</span> The tooltip adds positioning of <span class="st-pill">relative</span>.
+				</p>
+
+
+				<div class="st-data-tips">
+
+					<span class="adv-tip adv-tip--top">
+						Advanced Tooltip
+						<div class="adv-tip__content">
+							Hey there look at me, I have a <a href="javascript:void(0)">link</a>. I can also have other elements like a <span class="st-pill">pill</span>.
+						</div>
+					</span>
+
+				</div>
+
+<pre id="output"><code class="code-sample">
+// ADD a position to the class, top, left, right, bottom
+<span class="data-tip-{pos}" data-tips="Top tool tip">Top Tool Tip</span>
+
+// ADVANCED TOOLTIP
+<span class="adv-tip adv-tip--top">
+	Advanced Tooltip
+	<div class="adv-tip__content">
+		Hey there look at me, I have a <a href="javascript:void(0)">link</a>.
+	</div>
+</span>
+
+</code></pre>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- HERO DATA UNIT 1 of 2 -->
+	<div class="container st-container" id="hero-data-unit">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+
+				<h1 class="st-headline">HERO DATA UNIT</h1>
+				<p class="st-p">
+					The data unit is a hero element that gives the users a quick look into there data for stats, measureables, and a summary.
+				</p>
+
+			</div>
+		</div>
+	</div>
+
+	<!-- THE HERO DATA UNIT -->
+	<div class="hero-data">
+		<div class="container">
+
+			<div class="flex flex--12 flex--sm-middle">
+
+				<div class="flex__item--md-4">
+
+					<div class="hero-stats">
+
+						<div class="flex flex--12 flex--md-middle">
+							<div class="flex__item--md-4">
+								<h2 class="hero-stats__headline">92<sup>%</sup></h2>
+							</div>
+							<div class="flex__item--md-8">
+								<div class="st-pill">boom boom boom</div>
+							</div>
+						</div>
+
+						<div class="hero-stats__progress">
+							<div class="progress progress--title" data-title="RV">
+								<div style="width: 50%;"></div>
+							</div>
+							<div class="progress progress--title" data-title="JJ">
+								<div style="width: 23%;"></div>
+							</div>
+							<div class="progress progress--title" data-title="LP">
+								<div style="width: 84%;"></div>
+							</div>
+						</div>
+
+					</div>
+
+				</div>
+
+				<div class="flex__item--md-4 flex__offset--md-4">
+
+					<div class="hero-summary">
+
+						<p>Bacon ipsum dolor amet hamburger pastrami sirloin shank meatball. Fatback shoulder turducken capicola chuck pig kevin, pork pastrami pancetta bresaola. Pork chop alcatra corned beef bresaola prosciutto ham, beef ribs short loin pig pork. Cupim salami ground round pork chop picanha turducken hamburger meatloaf pig pork belly brisket t-bone. Swine boudin bacon landjaeger andouille. Pork loin shoulder pig salami tenderloin. Corned beef porchetta spare ribs capicola pastrami, sirloin pancetta short loin sausage meatloaf ham biltong.</p>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+	</div>
+
+	<!-- HERO DATA UNIT 2 of 2 -->
+	<div class="container st-container" id="hero-data-unit">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+<pre id="output"><code class="code-sample">
+
+
+</code></pre>
+			</div>
+		</div>
+	</div>
+
+
 
 	<!-- HEADER 1 of 2 -->
 	<div class="container st-container" id="st-header">
@@ -119,12 +335,15 @@
 
 				<h1 class="st-headline">HEADER BAR</h1>
 				<p class="st-p">
-					The header bar is the center piece of the framework. This is the consistent identifier of the branding and ties everything else together. Allowing the user to identify with the most common element of a page and keeping it consistent and all interactions equal, users can always identify with the company regardless of the product being servied.
+					The header bar is the center piece of the framework. This is the consistent identifier of the branding and ties everything else together. Allowing the user to identify with the most common element of a page and keeping it consistent and all interactions equal, users can always identify with the company regardless of the product being served.
 				</p>
 
 			</div>
 		</div>
 	</div>
+
+
+
 
 	<!-- THE HEADER ITSELF, NEEDS TO BE FLUID -->
 	<header class="header-bar">
@@ -173,8 +392,9 @@
 
 				<div class="nav-header__divider"></div>
 
-				<button class="nav-header__btn nav-dropdown dropdown-is-open" id="menu-nav-btn" data-icon="arrow_drop_down">
-					<i class="material-icons">receipt</i>
+				<button class="nav-header__btn nav-header__btn--close nav-dropdown dropdown-is-open" id="menu-nav-btn" data-icon="arrow_drop_down">
+					<!-- <i class="material-icons">receipt</i> -->
+					<i class="nav-btn-close"></i>
 
 					<ul class="nav-dropdown__menu">
 						<li><img src="https://placeimg.com/640/480/weather" alt="" class="menu-user-img">My Account</li>
@@ -191,15 +411,45 @@
 	</header>
 	<div class="header-ext">
 
-		<div class="header-ext__left">
-			<h1>Hello World</h1>
-		</div>
+		<div class="container">
 
-		<div class="header-ext__right">
+			<div class="flex flex--12">
+
+				<div class="flex__item--md-8">
+					<h1>Hello World</h1>
+				</div>
+
+				<div class="flex__item--md-4">
+					<p>Lorem ipsum dolor sit amet, nisl leo magna amet fermentum neque, eget libero, quis tristique id sed ac elementum donec, vestibulum lorem eros culpa feugiat placerat, lobortis faucibus duis at mollis </p>
+				</div>
+
+			</div>
+
+			<div class="flex flex--12">
+				<div class="flex__item--md-12">
+					<ul class="tabs">
+						<li class="is-active"><a href="#">Menu</a></li>
+						<li><a href="#">Settings</a></li>
+						<li><a href="#">Exit</a></li>
+					</ul>
+				</div>
+			</div>
 
 		</div>
 
 	</div>
+
+	<div class="header-toggle">
+
+		<button class="flyout-btn">
+			<i class="material-icons">list</i>
+		</button>
+
+	</div>
+
+
+
+
 
 	<!-- HEADER 2 of 2 -->
 	<div class="container st-container" id="st-header">
@@ -231,24 +481,6 @@
 				<input type="search" name="" id="">
 			</button>
 
-			<button class="nav-header__btn">
-				<i class="material-icons">get_app</i>
-			</button>
-
-			<button class="nav-header__btn">
-				<i class="material-icons">event</i>
-			</button>
-
-			<div class="nav-header__divider"></div>
-
-			<button class="nav-header__btn">
-				<i class="material-icons">home</i>
-			</button>
-
-			<button class="nav-header__btn">
-				<i class="material-icons">find_replace</i>
-			</button>
-
 			<button class="nav-header__btn nav-dropdown" data-icon="arrow_drop_down">
 				<i class="material-icons">list</i>
 			</button>
@@ -271,13 +503,26 @@
 	</div>
 
 </header>
-<div class="header-ext">
- <div class="header-ext__left">
-  <h1>Hello World</h1>
-  </div>
- <div class="header-ext__right">
+</code></pre>
 
- </div>
+<h1 class="st-headline">HEADER EXTENDED CODE SNIPPET</h1>
+
+<pre id="output"><code class="code-sample">
+</header>
+<div class="header-ext">
+<div class="container">
+<div class="flex--12">
+<div class="flex__item--md-12">
+<h1>Hello World</h1>
+</div>
+</div>
+</div>
+<div class="header-ext__left">
+<h1>Hello World</h1>
+</div>
+<div class="header-ext__right">
+
+</div>
 </div>
 
 </code></pre>
@@ -882,9 +1127,11 @@ __OFFSETS
 	</div> <!-- END T-FLEX -->
 
 
+
+
+	<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 	<!-- // jquery is only used for displaying the code snippets/ LIAR :) -->
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
 	<script src="js/functions.js"></script>
-
 </body>
 </html>

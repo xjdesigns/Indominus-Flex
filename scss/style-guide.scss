@@ -258,6 +258,10 @@ h1.st-headline {
 	background-color: $brand-primary;
 	color: $greyscale-11;
 	border-radius: 12px;
+
+	&--warning {
+		background-color: $brand-warning;
+	}
 }
 
 .st-steps-bar {
@@ -310,5 +314,19 @@ $colors: (
 @each $color, $bgcolor in $colors {
 	.st-color--#{$color} {
 		background-color: $bgcolor;
+	}
+}
+
+
+//////////////////////////////////
+// RETURN OF THE STYLE GUIDE //
+//////////////////////////////////
+.st-data-tips {
+	& > span {
+		background-color: $brand-primary;
+		display: inline-block;
+		min-width: 120px;
+		padding: 3px 6px;
+		color: $greyscale-11;
 	}
 }

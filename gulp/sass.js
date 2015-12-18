@@ -22,19 +22,18 @@ gulp.task('sass', function () {
     // sourceComments: 'map',
     imagePath: '/images' // Used by the image-url helper
   }, {
-    outputStyle: process.env.NODE_ENV === 'production' ? 'compressed' : 'nested'
+    outputStyle: 'nested'
   });
 
   return gulp.src('./scss/**/*.{sass,scss}')
     .pipe(plumber(plumberSettings))
-    //.pipe(sourcemaps.init())
+    // .pipe(sourcemaps.init())
     .pipe(sass(settings))
-    //.pipe(sourcemaps.write())
+    // .pipe(sourcemaps.write())
     .pipe(autoprefixer({ browsers: ['> 1%', 'last 2 versions', 'Firefox ESR', 'Opera 12.1'] }))
     .pipe(size({
       showFiles: true
     }))
-    .pipe(sass())
     .pipe(gulp.dest('./css'))
     .pipe(browserSync.reload({stream:true}));
 });

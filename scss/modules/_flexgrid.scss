@@ -117,12 +117,13 @@
     &--#{$bp}-bottom {
       align-items: flex-end;
     }
-    &--#{$bp}-first {
-      order: -1;
-    }
-    &--#{$bp}-last {
-      order: 1;
-    }
+    // THESE NEVER GET USED JJ-11/24/15
+    // &--#{$bp}-first {
+    //   order: -1;
+    // }
+    // &--#{$bp}-last {
+    //   order: 1;
+    // }
   }
 }
 
@@ -148,7 +149,7 @@
 // default is 12 columns
 // example: .grid__item--sm-1, .grid__item--12-lg
 @mixin flex-columns($bp, $columns:$base-columns) {
-  // NOTE: this uses an array which is defined above
+  // NOTE: this uses an array which is defined in _var.scss
   @for $i from 1 through length($columns) {
     .flex--#{nth($columns, $i)} {
       @for $j from 1 through nth($columns, $i) {

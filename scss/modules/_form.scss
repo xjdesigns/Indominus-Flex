@@ -5,11 +5,11 @@ form.form {
   display: flex;
   -webkit-appearance: none;
 
+  // BASE STYLING //
   input, textarea, label {
-    width: 100%;
     -webkit-appearance: none;
 
-    &:focus, &:active {
+    &:focus:not(label), &:active:not(label) {
       outline: 0;
       border: 1px solid $brand-primary;
     }
@@ -29,12 +29,10 @@ form.form {
     border: 1px solid $greyscale-10;
     border-radius: 6px;
     padding: 12px;
+    flex: 1;
   }
 
-  &--stacked {
-    flex-flow: wrap column;
-  }
-
+  // LABEL //
   .label {
     flex: 0 0 auto;
     font-size: .75rem;
@@ -42,13 +40,37 @@ form.form {
     color: $greyscale-08;
   }
 
+  // INPUT //
   .input {
     flex: 1;
   }
+
+
+  // SEARCH //
+  .search {
+    display: inline-block;
+    position: relative;
+
+    &__bar {
+      width: 100%;
+    }
+
+    &:before {
+      content: 'search';
+      font-family: 'Material Icons';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0;
+    }
+  }
 }
 
+// FORM GROUPS //
+// TODO: need to hash out forms a lot
 .form-group {
-  display: inline-flex;
+  display: flex;
+  align-items: center;
 
   &--inline {
     flex-flow: wrap row;

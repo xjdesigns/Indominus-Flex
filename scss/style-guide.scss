@@ -282,6 +282,7 @@ h1.st-headline {
 	border-radius: 50px;
 	box-shadow: 1px 1px 3px rgba(0, 0, 0, .6);
 	position: relative;
+
 	&:after {
 		content: attr(data-color);
 		position: absolute;

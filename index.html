@@ -6,14 +6,14 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
 	<title>Indominus Flex</title>
 	<link rel="stylesheet" href="css/em-reset.css">
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link href='http://fonts.googleapis.com/css?family=Lato:100,300,400,700|Exo+2:400,800|Titillium+Web:400,900|Roboto:100,300,400,700' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/style-guide.css">
+	<link rel="stylesheet" href="css/prettify.css">
 </head>
-<body>
+<body onload="prettyPrint()">
 
 	<header class="st-header">
 		<h1 class="st-headline">Indominus Flex</h1>
@@ -124,16 +124,27 @@
 
 				<div class="st-forms">
 
-					<form action="GET" class="form form--stacked">
-						<label class="label" for="firstName">Name</label>
-						<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
-						<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10"></textarea>
-						<div class="form-group form-group--inline">
+					<form action="GET" class="form flex flex--12 flex--xs-vertical">
+						<div class="flex__item--xs-12">
 							<label class="label" for="firstName">Name</label>
-							<input type="text" class="input">
-							<label class="label" for="firstName">Name</label>
-							<input type="text" class="input">
+							<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
 						</div>
+						<div class="flex__item--xs-12">
+							<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10"></textarea>
+						</div>
+						<div class="flex flex--12">
+							<div class="flex__item--xs-6">
+								<label class="label" for="firstName">Name</label>
+								<input type="text" class="input">
+							</div>
+							<div class="flex__item--xs-6">
+								<label class="label" for="lastName">Name</label>
+								<input type="text" class="input">
+							</div>
+						</div>
+						<label class="search" data-icon>
+							<input class="search__bar" type="search">
+						</label>
 					</form>
 
 				</div>
@@ -147,9 +158,72 @@
 
 	</code></pre> -->
 
+<pre class="prettyprint code-sample">
+	<form action="GET" class="form form--stacked">
+		<label class="label" for="firstName">Name</label>
+		<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
+		<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10"></textarea>
+		<div class="form-group form-group--inline">
+			<label class="label" for="firstName">Name</label>
+			<input type="text" class="input">
+			<label class="label" for="firstName">Name</label>
+			<input type="text" class="input">
+		</div>
+		<label class="search" data-icon>
+			<input class="search__bar" type="search">
+		</label>
+	</form>
+</pre>
+
 			</div>
 		</div>
 	</div>
+
+
+	<!-- Media OBJ -->
+	<div class="container st-container" id="st-media-obj">
+		<div class="flex flex--12 flex--xs-middle">
+			<div class="flex__item--xs-12">
+
+				<h1 class="st-headline">MEDIA OBJECT</h1>
+				<p class="st-p">
+					The media object is the definition for OOCSS. Refined from the original idea from Nicole Sullivan using flexbox it just got easier.
+				</p>
+
+				<p class="st-p">
+					<span class="st-pill">ALIGNMENT:</span> Add modifier classes to the media class and add vertical alignment. Default is <span class="st-pill">flex-start</span>.
+				</p>
+
+
+				<div class="st-mediaObj">
+
+				<div class="media">
+					<div class="media__figure">
+						<i class="material-icons">polymer</i>
+					</div>
+					<div class="media__body">
+						<p>This is the media object.</p>
+					</div>
+				</div>
+
+				</div>
+
+<pre id="output"><code class="code-sample">
+<div class="media {media-- | rev | middle} ">
+ <div class="media__element">
+  <i class="material-icons">face</i>
+ </div>
+ <div class="media__body">
+  <p>Hey there stranger</p>
+ </div>
+</div>
+
+</code></pre>
+
+			</div>
+		</div>
+	</div>
+
 
 	<!-- TOASTS -->
 	<div class="container st-container" id="st-toasts">
@@ -371,6 +445,10 @@
 				<button class="nav-header__btn">
 					<i class="material-icons">get_app</i>
 				</button>
+
+				<a class="nav-header__btn">
+					<i class="material-icons">get_app</i>
+				</a>
 
 				<button class="nav-header__btn">
 					<i class="material-icons">event</i>
@@ -1132,6 +1210,7 @@ __OFFSETS
 	<script src="//cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
 	<!-- // jquery is only used for displaying the code snippets/ LIAR :) -->
 	<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	<script src="js/prettify.js"></script>
 	<script src="js/functions.js"></script>
 </body>
 </html>

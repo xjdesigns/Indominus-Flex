@@ -88,13 +88,15 @@ strong {
 em {
   font-style: italic; }
 
-a:not(.btn) {
-  color: #1fa2ed;
-  text-decoration: underline;
-  -webkit-transition: color .3s ease;
-          transition: color .3s ease; }
-a:hover, a:focus, a:active {
-  color: #0e76b1; }
+a {
+  text-decoration: none; }
+  a.link {
+    color: #1fa2ed;
+    text-decoration: underline;
+    -webkit-transition: color .3s ease;
+            transition: color .3s ease; }
+  a:hover, a:focus, a:active {
+    color: #0e76b1; }
 
 button {
   -webkit-appearance: none;
@@ -1372,6 +1374,7 @@ blockquote {
   min-height: 72px;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
   position: relative;
+  z-index: 100;
   border-bottom: 1px solid #4d4d4d;
   color: #fff;
   background-color: #b3b3b3; }
@@ -1547,6 +1550,8 @@ blockquote {
       border-color: transparent;
       border-bottom-color: #b3b3b3;
       border-width: 6px; }
+    .nav-dropdown__menu a {
+      color: #fff; }
     .nav-dropdown__menu li {
       text-align: left;
       padding: 12px; }
@@ -1797,9 +1802,8 @@ form.form {
   display: flex;
   -webkit-appearance: none; }
   form.form input, form.form textarea, form.form label {
-    width: 100%;
     -webkit-appearance: none; }
-    form.form input:focus, form.form input:active, form.form textarea:focus, form.form textarea:active, form.form label:focus, form.form label:active {
+    form.form input:focus:not(label), form.form input:active:not(label), form.form textarea:focus:not(label), form.form textarea:active:not(label), form.form label:focus:not(label), form.form label:active:not(label) {
       outline: 0;
       border: 1px solid #1fa2ed; }
   form.form > input:not(:last-child), form.form > textarea:not(:last-child), form.form > label:not(:last-child) {
@@ -1809,11 +1813,11 @@ form.form {
   form.form input, form.form textarea {
     border: 1px solid #e5e5e5;
     border-radius: 6px;
-    padding: 12px; }
-  form.form--stacked {
-    -webkit-flex-flow: wrap column;
-        -ms-flex-flow: wrap column;
-            flex-flow: wrap column; }
+    padding: 12px;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
   form.form .label {
     -webkit-box-flex: 0;
     -webkit-flex: 0 0 auto;
@@ -1827,12 +1831,28 @@ form.form {
     -webkit-flex: 1;
         -ms-flex: 1;
             flex: 1; }
+  form.form .search {
+    display: inline-block;
+    position: relative; }
+    form.form .search__bar {
+      width: 100%; }
+    form.form .search:before {
+      content: 'search';
+      font-family: 'Material Icons';
+      position: absolute;
+      top: 0;
+      left: 0;
+      bottom: 0; }
 
 .form-group {
-  display: -webkit-inline-box;
-  display: -webkit-inline-flex;
-  display: -ms-inline-flexbox;
-  display: inline-flex; }
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
   .form-group--inline {
     -webkit-flex-flow: wrap row;
         -ms-flex-flow: wrap row;
@@ -2114,6 +2134,55 @@ input[type=range]:focus::-ms-fill-upper {
 
 input[type="search"]::-webkit-textfield-decoration-container {
   -webkit-appearance: none; }
+
+.media-obj {
+  margin: 10px; }
+  .media-obj .image {
+    float: left; }
+  .media-obj .image img {
+    display: block; }
+  .media-obj .imageRev {
+    float: right;
+    margin-left: 10px; }
+
+.media-obj, .bd {
+  overflow: hidden; }
+
+.media {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+  .media__element {
+    margin-right: 1em; }
+  .media__body {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1; }
+  .media--rev {
+    text-align: right; }
+    .media--rev .media__element {
+      margin-right: 0em;
+      margin-left: 1em;
+      -webkit-box-ordinal-group: 3;
+      -webkit-order: 2;
+          -ms-flex-order: 2;
+              order: 2; }
+    .media--rev .media__body {
+      -webkit-box-ordinal-group: 2;
+      -webkit-order: 1;
+          -ms-flex-order: 1;
+              order: 1; }
+  .media--middle {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center; }
 
 .walle {
   background: red;

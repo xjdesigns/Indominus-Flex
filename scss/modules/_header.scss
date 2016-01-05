@@ -16,6 +16,7 @@ $header-height: 72px;
   min-height: $header-height;
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.4);
   position: relative;
+  z-index: 100;
 
   border-bottom: 1px solid $greyscale-04;
 
@@ -210,6 +211,10 @@ $header-height: 72px;
       border-color: rgba(0, 0, 0, 0);
     	border-bottom-color: $greyscale-08;
     	border-width: 6px;
+    }
+
+    a {
+      color: $greyscale-11;
     }
 
     li {

@@ -37,17 +37,42 @@
 // using flexbox to solve our issues
 .media {
 	display: flex;
-	align-items: start;
+	align-items: flex-start;
+
+	&__element {
+		margin-right: 1em;
+	}
+
+	&__body {
+		flex: 1;
+	}
+
+	&--rev {
+		text-align: right;
+
+		.media__element {
+			margin-right: 0em;
+			margin-left: 1em;
+			order: 2;
+		}
+		.media__body {
+			order: 1;
+		}
+	}
+
+	&--middle {
+		align-items: center;
+	}
 }
-.media__figure {
-	margin-right: 1em;
-}
-.media__body {
-	flex: 1;
-}
-.media-figure--rev {
-	order: 2;
-}
-.media-body--rev {
-	order: 1;
-}
+// .media__figure {
+// 	margin-right: 1em;
+// }
+// .media__body {
+// 	flex: 1;
+// }
+// .media-figure--rev {
+// 	order: 2;
+// }
+// .media-body--rev {
+// 	order: 1;
+// }

@@ -61,7 +61,9 @@ em {
 // ANCHORS/BUTTONS //
 ///////////////////////
 a {
-  &:not(.btn) {
+  text-decoration: none;
+
+  &.link {
     color: $brand-primary;
     text-decoration: underline;
     transition: color .3s ease;

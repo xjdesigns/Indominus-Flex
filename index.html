@@ -16,7 +16,7 @@
 <body onload="prettyPrint()">
 
 	<header class="st-header">
-		<h1 class="st-headline">Indominus Flex</h1>
+		<h1 class="st-headline">Indominus Flex / 6PIXELS</h1>
 	</header>
 
 	<nav class="nav">
@@ -118,7 +118,17 @@
 
 				<h1 class="st-headline">FORMS</h1>
 				<p class="st-p">
-					Forms, need I say more. MORE INFO AND DOCS COMING SOON
+					TODO: FIX THE LABELS SO THEY WRAP THE INPUTS PLEASE
+				</p>
+
+				<p class="st-p">
+					Forms are a huge part of a website, application, or submission requests. Here we give you a standard form set to use.
+					<br>
+					<span class="st-pill">form</span> Base class for form element
+					<br>
+					<span class="st-pill">label</span> Base class for label
+					<br>
+					<span class="st-pill">input</span> Base class for input
 				</p>
 
 
@@ -127,23 +137,23 @@
 					<form action="GET" class="form flex flex--12 flex--xs-vertical">
 						<div class="flex__item--xs-12">
 							<div class="form-group form-group--inline">
-								<label class="label" for="firstName">Name</label>
-								<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
+								<label class="label">Name</label>
+								<input class="input" type="text" placeholder="i am input">
 							</div>
 						</div>
 						<div class="flex__item--xs-12">
 							<div class="form-group">
-								<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10" placeholder="I am a text area and can hold text, isn't that neat!"></textarea>
+								<textarea class="textarea" id="textarea" cols="30" rows="10" placeholder="I am a text area and can hold text, isn't that neat!"></textarea>
 							</div>
 						</div>
 
 						<div class="flex__item--xs-12">
 							<div class="form-group form-group--inline">
 
-								<label class="label" for="firstName">Name</label>
+								<label class="label" >Name</label>
 								<input type="text" class="input">
 
-								<label class="label" for="lastName">Name</label>
+								<label class="label">Name</label>
 								<input type="text" class="input">
 
 							</div>
@@ -176,32 +186,81 @@
 								</label>
 							</div>
 						</div>
+
+						<div class="flex__item--xs-12">
+							<div class="form-group">
+								<label class="radio">
+									<input type="radio" name="radio" checked>
+									<span class="radio__dot"></span>
+									Choice 1
+								</label>
+								<label class="radio">
+									<input type="radio" name="radio">
+									<span class="radio__dot"></span>
+									Choice 1
+								</label>
+								<label class="radio">
+									<input type="radio" name="radio">
+									<span class="radio__dot"></span>
+									Choice 1
+								</label>
+							</div>
+						</div>
+
+						<div class="flex__item--xs-12">
+							<div class="form-group">
+								<label>
+									<input type="checkbox" class="tgl tgl-light">
+									<span class="tgl-btn"></span>
+								</label>
+							</div>
+						</div>
+
+
+						<h1 class="st-headline">INPUT ADD ONS</h1>
+						<p class="st-p">
+							<span class="st-pill">.form-group--addon</span> With inputs you can specify it being an add on to attach a label.
+							<span class="st-pill">ALIGNMENT:</span> Add modifier classes to the media class and add vertical alignment. Default is left, adding a class of <span class="st-pill">.form-group--last</span> will style the label properly. NOTE: the label must be last.
+						</p>
+
+						<div class="flex__item--xs-12">
+							<div class="form-group form-group--addon">
+								<label class="label">Name</label>
+								<input class="input" type="text" placeholder="i am input">
+							</div>
+							<div class="form-group form-group--addon form-group--last">
+								<input class="input" type="text" placeholder="i am input">
+								<label class="label">Name</label>
+							</div>
+						</div>
+
 					</form>
 
 				</div>
 
 
 <pre id="output"><code class="code-sample">
+// BASE FORM SET UP
 <form action="GET" class="form flex flex--12 flex--xs-vertical">
 	<div class="flex__item--xs-12">
 		<div class="form-group form-group--inline">
-			<label class="label" for="firstName">Name</label>
-			<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
+			<label class="label">Name</label>
+			<input class="input" type="text" placeholder="i am input">
 		</div>
 	</div>
 	<div class="flex__item--xs-12">
 		<div class="form-group">
-			<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10" placeholder="I am a text area and can hold text, isn't that neat!"></textarea>
+			<textarea class="textarea" id="textarea" cols="30" rows="10" placeholder="I am a text area and can hold text, isn't that neat!"></textarea>
 		</div>
 	</div>
 
 	<div class="flex__item--xs-12">
 		<div class="form-group form-group--inline">
 
-			<label class="label" for="firstName">Name</label>
+			<label class="label" >Name</label>
 			<input type="text" class="input">
 
-			<label class="label" for="lastName">Name</label>
+			<label class="label">Name</label>
 			<input type="text" class="input">
 
 		</div>
@@ -215,17 +274,73 @@
 		</div>
 	</div>
 
-	<div class="flex__item--xs-12">
-		<div class="form-group">
-			<label class="checkbox">
-				<input type="checkbox" name="checkbox" id="checkbox">
-				<span data-icon="check" class="checkbox__box"></span>
-				<!-- copy goes here and is left-aligned -->
-				Yes
-			</label>
-		</div>
-	</div>
 </form>
+</code></pre>
+
+<pre id="output"><code class="code-sample">
+// CHECKBOXES AND RADIO BUTTONS
+<div class="flex__item--xs-12">
+	<div class="form-group">
+		<label class="checkbox">
+			<input type="checkbox" name="checkbox">
+			<span data-icon="check" class="checkbox__box"></span>
+			Yes
+		</label>
+		<label class="checkbox">
+			<input type="checkbox" name="checkbox">
+			<span data-icon="check" class="checkbox__box"></span>
+			No
+		</label>
+		<label class="checkbox">
+			<input type="checkbox" name="checkbox">
+			<span data-icon="check" class="checkbox__box"></span>
+			Maybe
+		</label>
+	</div>
+</div>
+
+<div class="flex__item--xs-12">
+	<div class="form-group">
+		<label class="radio">
+			<input type="radio" name="radio" checked>
+			<span class="radio__dot"></span>
+			Choice 1
+		</label>
+		<label class="radio">
+			<input type="radio" name="radio">
+			<span class="radio__dot"></span>
+			Choice 1
+		</label>
+		<label class="radio">
+			<input type="radio" name="radio">
+			<span class="radio__dot"></span>
+			Choice 1
+		</label>
+	</div>
+</div>
+
+<div class="flex__item--xs-12">
+	<div class="form-group">
+		<label>
+			<input type="checkbox" class="tgl tgl-light">
+			<span class="tgl-btn"></span>
+		</label>
+	</div>
+</div>
+</code></pre>
+
+<pre id="output"><code class="code-sample">
+// INPUT ADD ON
+<div class="flex__item--xs-12">
+	<div class="form-group form-group--addon">
+		<label class="label">Name</label>
+		<input class="input" type="text" placeholder="i am input">
+	</div>
+	<div class="form-group form-group--addon form-group--last">
+		<input class="input" type="text" placeholder="i am input">
+		<label class="label">Name</label>
+	</div>
+</div>
 </code></pre>
 
 			</div>

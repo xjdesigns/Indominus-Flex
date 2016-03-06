@@ -4,8 +4,6 @@
 // ██╔══╝  ██║     ██╔══╝   ██╔██╗     ██║   ██║██╔══██╗██║██║  ██║
 // ██║     ███████╗███████╗██╔╝ ██╗    ╚██████╔╝██║  ██║██║██████╔╝
 // ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝     ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝
-// this is a flex grid
-// NOTE: this was set up to use auto-prefixer
 
 
 
@@ -19,9 +17,8 @@
   max-width: $container;
   margin-left: auto;
   margin-right: auto;
-  // fluid ecosystem
   &--fluid {
-    max-width: none;
+    max-width: 100%;
   }
 }
 
@@ -71,8 +68,6 @@
 // ██╔══╝  ██║     ██╔══╝   ██╔██╗
 // ██║     ███████╗███████╗██╔╝ ██╗
 // ╚═╝     ╚══════╝╚══════╝╚═╝  ╚═╝
-// NOTE: This is being excluded for now below in the BUILD
-// mixin for flex attribute grow/shrink
 @mixin flex-container($flex-col) {
   @for $i from 1 through $flex-col {
     .flex-#{$i} {
@@ -89,8 +84,6 @@
 // ██╔══██║██║     ██║██║   ██║██║╚██╗██║██║╚██╔╝██║██╔══╝  ██║╚██╗██║   ██║
 // ██║  ██║███████╗██║╚██████╔╝██║ ╚████║██║ ╚═╝ ██║███████╗██║ ╚████║   ██║
 // ╚═╝  ╚═╝╚══════╝╚═╝ ╚═════╝ ╚═╝  ╚═══╝╚═╝     ╚═╝╚══════╝╚═╝  ╚═══╝   ╚═╝
-// flex-alignment mixin
-// example: flex--xs-start
 @mixin flex-alignment($bp) {
   .flex {
     &--#{$bp}-start {
@@ -117,13 +110,6 @@
     &--#{$bp}-bottom {
       align-items: flex-end;
     }
-    // THESE NEVER GET USED JJ-11/24/15
-    // &--#{$bp}-first {
-    //   order: -1;
-    // }
-    // &--#{$bp}-last {
-    //   order: 1;
-    // }
   }
 }
 
@@ -135,7 +121,6 @@
 //    ██║   ██╔══██║██╔══╝      ██║   ██║██╔══██╗██║██║  ██║
 //    ██║   ██║  ██║███████╗    ╚██████╔╝██║  ██║██║██████╔╝
 //    ╚═╝   ╚═╝  ╚═╝╚══════╝     ╚═════╝ ╚═╝  ╚═╝╚═╝╚═════╝
-// columns base is for setting up the base styling
 [class*="flex__"] {
   flex: 0 0 auto;
   // prevent column from collapsing
@@ -145,9 +130,6 @@
 }
 
 
-// THE GRID
-// default is 12 columns
-// example: .grid__item--sm-1, .grid__item--12-lg
 @mixin flex-columns($bp, $columns:$base-columns) {
   // NOTE: this uses an array which is defined in _var.scss
   @for $i from 1 through length($columns) {

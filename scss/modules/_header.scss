@@ -163,6 +163,7 @@ $header-height: 72px;
 /////////////////
 .nav-dropdown {
   position: relative;
+  font-size: .75rem;
   margin-right: 12px;
 
   &::after {
@@ -220,6 +221,7 @@ $header-height: 72px;
     li {
       text-align: left;
       padding: 12px;
+      cursor: pointer;
 
       &:hover {
         background-color: darken($brand-primary, 10);

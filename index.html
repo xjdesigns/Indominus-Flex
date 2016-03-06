@@ -126,54 +126,107 @@
 
 					<form action="GET" class="form flex flex--12 flex--xs-vertical">
 						<div class="flex__item--xs-12">
-							<label class="label" for="firstName">Name</label>
-							<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
+							<div class="form-group form-group--inline">
+								<label class="label" for="firstName">Name</label>
+								<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
+							</div>
 						</div>
 						<div class="flex__item--xs-12">
-							<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10"></textarea>
+							<div class="form-group">
+								<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10" placeholder="I am a text area and can hold text, isn't that neat!"></textarea>
+							</div>
 						</div>
-						<div class="flex flex--12">
-							<div class="flex__item--xs-6">
+
+						<div class="flex__item--xs-12">
+							<div class="form-group form-group--inline">
+
 								<label class="label" for="firstName">Name</label>
 								<input type="text" class="input">
-							</div>
-							<div class="flex__item--xs-6">
+
 								<label class="label" for="lastName">Name</label>
 								<input type="text" class="input">
+
 							</div>
 						</div>
-						<label class="search" data-icon>
-							<input class="search__bar" type="search">
-						</label>
+
+						<div class="flex__item--xs-12">
+							<div class="form-group">
+								<label class="search" data-icon>
+									<input class="search__bar" type="search">
+								</label>
+							</div>
+						</div>
+
+						<div class="flex__item--xs-12">
+							<div class="form-group">
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox">
+									<span data-icon="check" class="checkbox__box"></span>
+									Yes
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox">
+									<span data-icon="check" class="checkbox__box"></span>
+									No
+								</label>
+								<label class="checkbox">
+									<input type="checkbox" name="checkbox">
+									<span data-icon="check" class="checkbox__box"></span>
+									Maybe
+								</label>
+							</div>
+						</div>
 					</form>
 
 				</div>
 
-	<!-- <pre id="output"><code class="code-sample">
-	.brand-primary
-	.brand-primary
-	.brand-primary
-	.brand-primary
-	.brand-primary
 
-	</code></pre> -->
-
-<pre class="prettyprint code-sample">
-	<form action="GET" class="form form--stacked">
-		<label class="label" for="firstName">Name</label>
-		<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
-		<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10"></textarea>
+<pre id="output"><code class="code-sample">
+<form action="GET" class="form flex flex--12 flex--xs-vertical">
+	<div class="flex__item--xs-12">
 		<div class="form-group form-group--inline">
 			<label class="label" for="firstName">Name</label>
-			<input type="text" class="input">
+			<input class="input" type="text" name="First Name" id="firstName" placeholder="i am input">
+		</div>
+	</div>
+	<div class="flex__item--xs-12">
+		<div class="form-group">
+			<textarea class="textarea" name="textarea" id="textarea" cols="30" rows="10" placeholder="I am a text area and can hold text, isn't that neat!"></textarea>
+		</div>
+	</div>
+
+	<div class="flex__item--xs-12">
+		<div class="form-group form-group--inline">
+
 			<label class="label" for="firstName">Name</label>
 			<input type="text" class="input">
+
+			<label class="label" for="lastName">Name</label>
+			<input type="text" class="input">
+
 		</div>
-		<label class="search" data-icon>
-			<input class="search__bar" type="search">
-		</label>
-	</form>
-</pre>
+	</div>
+
+	<div class="flex__item--xs-12">
+		<div class="form-group">
+			<label class="search" data-icon>
+				<input class="search__bar" type="search">
+			</label>
+		</div>
+	</div>
+
+	<div class="flex__item--xs-12">
+		<div class="form-group">
+			<label class="checkbox">
+				<input type="checkbox" name="checkbox" id="checkbox">
+				<span data-icon="check" class="checkbox__box"></span>
+				<!-- copy goes here and is left-aligned -->
+				Yes
+			</label>
+		</div>
+	</div>
+</form>
+</code></pre>
 
 			</div>
 		</div>
@@ -470,9 +523,11 @@
 
 				<div class="nav-header__divider"></div>
 
-				<button class="nav-header__btn nav-header__btn--close nav-dropdown dropdown-is-open" id="menu-nav-btn" data-icon="arrow_drop_down">
-					<!-- <i class="material-icons">receipt</i> -->
-					<i class="nav-btn-close"></i>
+				<div class="nav-dropdown dropdown-is-open" id="menu-nav-btn" data-icon="arrow_drop_down">
+					<button class="nav-header__btn nav-header__btn--close">
+						<!-- <i class="material-icons">receipt</i> -->
+						<i class="nav-btn-close"></i>
+					</button>
 
 					<ul class="nav-dropdown__menu">
 						<li><img src="https://placeimg.com/640/480/weather" alt="" class="menu-user-img">My Account</li>
@@ -480,8 +535,7 @@
 						<li><i class="material-icons">polymer</i>the best thing</li>
 						<li><i class="material-icons">account_box</i>account</li>
 					</ul>
-
-				</button>
+				</div>
 
 			</nav>
 		</div>

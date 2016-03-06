@@ -22,7 +22,7 @@ gulp.task('sass', function () {
     // sourceComments: 'map',
     imagePath: '/images' // Used by the image-url helper
   }, {
-    outputStyle: 'nested'
+    outputStyle: 'compressed'
   });
 
   return gulp.src('./scss/**/*.{sass,scss}')
